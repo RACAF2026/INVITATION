@@ -341,38 +341,59 @@
     .event-details {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
+      gap: .8rem;
       margin: 1.5rem 0;
-      padding: .9rem 0;
-      border-top: 1px solid #92724580;
-      border-bottom: 1px solid #92724580;
+      padding: 0;
+    }
+
+    .event-details > div {
+      display: grid;
+      justify-items: center;
+      align-content: start;
+      min-width: 0;
+      padding: 1rem .7rem;
+      border: 1px solid #a9824d80;
+      border-radius: .75rem;
+      background: linear-gradient(145deg, #fff9e9d9, #ead6aa8c);
+      box-shadow: inset 0 1px #fff8, 0 5px 12px #694d281c;
+      text-align: center;
+    }
+
+    .detail-icon {
+      display: grid;
+      width: 2.45rem;
+      aspect-ratio: 1;
+      place-items: center;
+      margin-bottom: .65rem;
+      border: 1px solid #a9824d80;
+      border-radius: 50%;
+      background: #f2dfb9;
+      color: #755729;
+    }
+
+    .detail-icon svg {
+      width: 1.15rem;
+      height: 1.15rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.7;
     }
 
     .detail-label {
       display: block;
-      margin-bottom: .35rem;
+      margin-bottom: .4rem;
       color: #78684a;
       font: 700 .65rem/1.4 Arial, sans-serif;
-      letter-spacing: .16em;
+      letter-spacing: .12em;
       text-transform: uppercase;
     }
 
     .detail-value {
       color: #173e49;
-      font-size: 1rem;
-      line-height: 1.5;
+      font: 700 .98rem/1.45 Georgia, "Times New Roman", serif;
     }
-
-    .event-details > div::before {
-      display: block;
-      margin-bottom: .45rem;
-      color: #987748;
-      content: "✧";
-      font-size: .8rem;
-    }
-
-    .event-details > div:first-child::before { content: "◷"; }
-    .event-details > div:last-child::before { content: "✧"; }
 
     .signoff {
       margin-top: 1.4rem !important;
@@ -459,6 +480,74 @@
       transition: opacity 1.2s ease;
     }
 
+    .wave-surge {
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .wave-layer {
+      position: absolute;
+      left: -25%;
+      bottom: -130%;
+      width: 150%;
+      height: 135%;
+      border: 1px solid #9af4e380;
+      border-radius: 44% 56% 0 0 / 9% 12% 0 0;
+      background:
+        radial-gradient(ellipse at 28% 9%, #a2fff05c, transparent 25%),
+        linear-gradient(180deg, #61d6c8f5 0%, #148d9feF 15%, #07506ceF 54%, #041a30 100%);
+      box-shadow: inset 0 18px 28px #c6fff440, 0 -12px 34px #61d6c852;
+      transform: rotate(-2deg);
+    }
+
+    .wave-layer:nth-child(2) {
+      left: -32%;
+      width: 164%;
+      border-color: #8de9e18c;
+      background:
+        radial-gradient(ellipse at 68% 10%, #d0fff45c, transparent 24%),
+        linear-gradient(180deg, #36b8bceF 0%, #08758eF2 28%, #063d59 70%, #041a30 100%);
+      transform: rotate(2deg);
+    }
+
+    .wave-layer:nth-child(3) {
+      left: -18%;
+      width: 136%;
+      border-color: #b0fff040;
+      background:
+        radial-gradient(ellipse at 42% 5%, #d6fff852, transparent 22%),
+        linear-gradient(180deg, #178fa8 0%, #075b7b 40%, #041a30 100%);
+      transform: rotate(-1deg);
+    }
+
+    .reveal-transition.is-active .wave-layer {
+      animation: wave-cover .95s cubic-bezier(.2, .72, .22, 1) both;
+    }
+
+    .reveal-transition.is-active .wave-layer:nth-child(2) {
+      animation-delay: .09s;
+    }
+
+    .reveal-transition.is-active .wave-layer:nth-child(3) {
+      animation-delay: .18s;
+    }
+
+    .reveal-transition.is-leaving .wave-layer {
+      bottom: -10%;
+      animation: wave-recede 1.2s cubic-bezier(.7, 0, .3, 1) both;
+    }
+
+    .reveal-transition.is-leaving .wave-layer:nth-child(2) {
+      animation-delay: .07s;
+    }
+
+    .reveal-transition.is-leaving .wave-layer:nth-child(3) {
+      animation-delay: .14s;
+    }
+
     .reveal-transition.is-active {
       visibility: visible;
       animation: reveal-cover .9s ease-out forwards;
@@ -475,7 +564,7 @@
 
     .reveal-scene {
       position: absolute;
-      z-index: 1;
+      z-index: 3;
       top: 50%;
       left: 50%;
       width: min(90vw, 32rem);
@@ -591,6 +680,18 @@
       to { opacity: 1; }
     }
 
+    @keyframes wave-cover {
+      0% { bottom: -130%; }
+      68% { bottom: -4%; }
+      84% { bottom: -14%; }
+      100% { bottom: -10%; }
+    }
+
+    @keyframes wave-recede {
+      from { bottom: -10%; }
+      to { bottom: -145%; }
+    }
+
     @keyframes compass-turn {
       to { transform: rotate(360deg); }
     }
@@ -639,7 +740,8 @@
         padding-bottom: 3rem;
         background-attachment: scroll;
       }
-      .event-details { grid-template-columns: 1fr; }
+      .event-details { gap: .55rem; }
+      .event-details > div { padding: .85rem .45rem; }
       .letter p.letter-mark {
         padding: .3rem 0;
         font-size: .54rem;
@@ -655,8 +757,8 @@
       }
       .recipient { font-size: .9rem !important; }
       .recipient span { font-size: .82rem; }
-      .detail-label { font-size: .6rem; }
-      .detail-value { font-size: .92rem; }
+      .detail-label { font-size: .55rem; letter-spacing: .08em; }
+      .detail-value { font-size: .84rem; }
       .footer { font-size: .68rem; }
       .intro > .corner-logos { inset: 2rem 2rem auto; }
       .intro > .corner-logos img { height: 2.75rem; max-width: 2.75rem; }
@@ -763,10 +865,22 @@
 
           <div class="event-details" aria-label="Event details">
             <div>
+              <span class="detail-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="3.5" y="5.5" width="17" height="15" rx="2"></rect>
+                  <path d="M7.5 3.5v4M16.5 3.5v4M3.5 10h17M8 14h2M14 14h2M8 17h2"></path>
+                </svg>
+              </span>
               <span class="detail-label">Dates</span>
               <span class="detail-value">4, 5 &amp; 6 November 2026</span>
             </div>
             <div>
+              <span class="detail-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M19 10.2c0 5-7 10.3-7 10.3S5 15.2 5 10.2a7 7 0 1 1 14 0Z"></path>
+                  <circle cx="12" cy="10" r="2.2"></circle>
+                </svg>
+              </span>
               <span class="detail-label">Venue</span>
               <span class="detail-value">RACAF Ground</span>
             </div>
@@ -784,6 +898,11 @@
       <span class="relic-mote"></span>
       <span class="relic-mote"></span>
       <span class="relic-mote"></span>
+      <div class="wave-surge" aria-hidden="true">
+        <span class="wave-layer"></span>
+        <span class="wave-layer"></span>
+        <span class="wave-layer"></span>
+      </div>
       <div class="reveal-scene" id="reveal-scene">
         <div class="relic-flight" id="relic-flight">
           <div class="relic-emblem" role="img" aria-label="A turning ship's steering wheel">
@@ -810,7 +929,7 @@
     const returnLink = document.querySelector('.footer a[href="#intro-title"]');
     const diveLabel = document.querySelector("#dive-label");
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const coverDelay = reduceMotion ? 20 : 900;
+    const coverDelay = reduceMotion ? 20 : 1250;
     const unlockDelay = reduceMotion ? 20 : 1200;
 
     diveButton.addEventListener("click", () => {
