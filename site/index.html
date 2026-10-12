@@ -58,6 +58,26 @@
       pointer-events: none;
     }
 
+    .intro-backdrop video,
+    .invitation-backdrop video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .intro-backdrop video {
+      position: absolute;
+      inset: 0;
+    }
+
+    .intro-backdrop::after {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, #071d2a52 0%, #071d2a82 48%, #04121de8 100%);
+      content: "";
+    }
+
     .intro::before {
       position: absolute;
       inset: 1.1rem;
@@ -173,13 +193,32 @@
 
     .invitation {
       position: relative;
+      isolation: isolate;
       overflow: hidden;
       padding: clamp(4rem, 10vw, 8rem) 1.25rem;
+      background: #04121d;
+    }
+
+    .invitation-backdrop {
+      position: absolute;
+      z-index: 0;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .invitation-backdrop::after {
+      position: absolute;
+      inset: 0;
       background:
         radial-gradient(ellipse at 50% 0, #32616b52, transparent 52rem),
-        linear-gradient(180deg, #061924c9, #081e28e8 50%, #04121df2),
-        url("./shipwreck-background.png") center / cover fixed,
-        #04121d;
+        linear-gradient(180deg, #061924c9, #081e28e8 50%, #04121df2);
+      content: "";
+    }
+
+    .invitation-backdrop video {
+      position: absolute;
+      inset: 0;
     }
 
     .letter {
@@ -794,7 +833,11 @@
 <body>
   <main>
     <section class="intro" aria-labelledby="intro-title">
-      <div class="intro-backdrop" aria-hidden="true"></div>
+      <div class="intro-backdrop" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="metadata" poster="./shipwreck-background.png">
+          <source src="./ocean-background.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="corner-logos" role="group" aria-label="NERIST and Sonabyss logos">
         <img src="./nerist-logo.png" alt="NERIST logo">
         <img src="./sonabyss-logo.png" alt="Sonabyss event logo">
@@ -810,6 +853,11 @@
     </section>
 
     <section class="invitation hidden" id="invitation" aria-labelledby="letter-title" tabindex="-1">
+      <div class="invitation-backdrop" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="metadata" poster="./shipwreck-background.png">
+          <source src="./ocean-background.mp4" type="video/mp4">
+        </video>
+      </div>
       <article class="letter">
         <div class="corner-logos" role="group" aria-label="NERIST and Sonabyss logos">
           <img src="./nerist-logo.png" alt="NERIST logo">
