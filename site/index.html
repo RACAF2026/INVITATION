@@ -127,13 +127,13 @@
       font-size: clamp(3.1rem, 9vw, 6.8rem);
       font-weight: 400;
       letter-spacing: -.045em;
-      line-height: .98;
+      line-height: 1.04;
       text-shadow: 0 5px 35px #001018, 0 0 50px #071d2a80;
     }
 
-    .intro h1 span {
+    .tentacle-initial {       display: inline-flex;       width: .62em;       height: 1.04em;       align-items: center;       justify-content: center;       margin-right: -.025em;       vertical-align: -.13em;       filter: drop-shadow(0 4px 8px #001018b0);     }      .tentacle-initial svg { display: block; width: 100%; height: 100%; overflow: visible; }     .tentacle-initial .tentacle-shape { fill: none; stroke: url("#tentacle-gradient"); stroke-linecap: round; stroke-width: 16; }     .tentacle-initial .sucker { fill: #173943; stroke: #f4d69a; stroke-width: 1.8; }      .intro h1 > span:last-child {
       display: block;
-      margin-top: 1.2rem;
+      margin-top: 1.35rem;
       color: var(--gold);
       font: 600 clamp(.85rem, 2.3vw, 1.05rem)/1.5 Arial, sans-serif;
       letter-spacing: .32em;
@@ -498,9 +498,9 @@
       .intro { padding: 1.25rem; }
       .intro-content { padding-bottom: 6rem; }
       .eyebrow { font-size: .68rem; letter-spacing: .13em; }
-      .intro h1 { font-size: clamp(2.15rem, 9vw, 2.7rem); }
-      .intro h1 span {
-        margin-top: .9rem;
+      .intro h1 { font-size: clamp(2rem, 8.5vw, 2.55rem); line-height: 1.08; }       .tentacle-initial { width: .58em; height: 1em; vertical-align: -.12em; }
+      .intro h1 > span:last-child {
+        margin-top: 1.05rem;
         font-size: .76rem;
         letter-spacing: .24em;
       }
@@ -571,7 +571,7 @@
 
     @media (max-width: 540px) and (max-height: 720px) {
       .intro-content { padding: 3.5rem 0 4.5rem; }
-      .intro h1 span { margin-top: .85rem; }
+      .intro h1 > span:last-child { margin-top: .9rem; }
       .intro-copy { margin: 1.05rem auto 1.2rem; }
       .letter { padding-top: 7rem; padding-bottom: 2.5rem; }
       .letter .corner-logos { top: 4rem; }
@@ -601,7 +601,7 @@
       </div>
       <div class="intro-content">
         <p class="eyebrow">A message from beneath the waves</p>
-        <h1 id="intro-title" tabindex="-1">Legacy of the<br>Lost Shipwreck<span>SONABYSS 2026</span></h1>
+        <h1 id="intro-title" tabindex="-1" aria-label="Legacy of the Lost Shipwreck SONABYSS 2026">Legacy of the<br>Lost <span class="tentacle-initial" aria-hidden="true"><svg viewBox="0 0 64 96" aria-hidden="true" focusable="false"><defs><linearGradient id="tentacle-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1d49b"></stop><stop offset=".48" stop-color="#c58f52"></stop><stop offset="1" stop-color="#78b9aa"></stop></linearGradient></defs><path class="tentacle-shape" d="M45 11C31 1 14 8 14 20c0 13 35 13 37 28 2 15-30 15-39 27-10 13 3 24 23 14"></path><g class="sucker"><circle cx="30" cy="11" r="2.2"></circle><circle cx="20" cy="19" r="2.2"></circle><circle cx="25" cy="30" r="2.2"></circle><circle cx="39" cy="35" r="2.2"></circle><circle cx="43" cy="48" r="2.2"></circle><circle cx="32" cy="59" r="2.2"></circle><circle cx="18" cy="67" r="2.2"></circle><circle cx="17" cy="79" r="2.2"></circle><circle cx="29" cy="86" r="2.2"></circle></g></svg></span>hipwreck<span>SONABYSS 2026</span></h1>
         <p class="intro-copy">A little ocean, a hidden treasure, and a special invitation from the organising committee.</p>
         <button class="dive-button" id="dive-button" type="button" aria-controls="invitation" aria-live="polite">
           <span aria-hidden="true">↓</span> <span id="dive-label">Dive into the invitation</span>
