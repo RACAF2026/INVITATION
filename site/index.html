@@ -209,23 +209,6 @@
         #04121d;
     }
 
-    .invitation::after {
-      position: absolute;
-      z-index: 0;
-      color: #e2c27d;
-      opacity: .28;
-      pointer-events: none;
-    }
-
-    .invitation::after {
-      right: max(1rem, calc(50% - 34rem));
-      bottom: 5rem;
-      content: "⚓  ✧  ☠  ✧  ⚓";
-      color: var(--gold);
-      font-size: clamp(1.35rem, 4vw, 2.5rem);
-      letter-spacing: .2em;
-    }
-
     .letter {
       position: relative;
       z-index: 1;
@@ -642,14 +625,6 @@
 
       .intro-copy {
         margin: 1.2rem auto 1.4rem;
-      }
-    }
-
-    @media (max-width: 540px) {
-      .invitation::after {
-        right: .5rem;
-        bottom: 2rem;
-        font-size: 1.2rem;
       }
     }
 
