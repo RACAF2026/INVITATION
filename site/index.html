@@ -638,7 +638,11 @@
       }
       .dive-button { font-size: .72rem; }
       .scroll-hint { font-size: .6rem; }
-      .invitation { background-attachment: scroll; }
+      .invitation {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        background-attachment: scroll;
+      }
       .event-details { grid-template-columns: 1fr; }
       .letter p.letter-mark {
         padding: .3rem 0;
@@ -661,9 +665,12 @@
       .intro > .corner-logos { inset: 2rem 2rem auto; }
       .intro > .corner-logos img { height: 2.75rem; max-width: 2.75rem; }
       .letter {
-        width: calc(100% + 1.5rem);
-        margin-left: -.75rem;
-        padding: 12.5rem clamp(2rem, 10vw, 2.75rem) 4rem;
+        width: calc(100% + 2.5rem);
+        margin-left: -1.25rem;
+        padding: 10.75rem clamp(1.65rem, 7vw, 2.25rem) 3rem;
+      }
+      .letter::before {
+        background-size: 112% 100%;
       }
       .letter-body {
         margin-top: 1.25rem;
@@ -676,7 +683,7 @@
         margin-top: .55rem;
       }
       .letter .corner-logos {
-        top: 9.25rem;
+        top: 7.5rem;
         right: auto;
         left: 50%;
         width: max-content;
@@ -694,8 +701,8 @@
       .intro-copy { margin: 1.05rem auto 1.2rem; }
       .scroll-hint { bottom: 1.25rem; }
       .scroll-hint::before { height: 1.2rem; }
-      .letter { padding-top: 11.5rem; padding-bottom: 3rem; }
-      .letter .corner-logos { top: 8.5rem; }
+      .letter { padding-top: 9.5rem; padding-bottom: 2.5rem; }
+      .letter .corner-logos { top: 6.25rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
