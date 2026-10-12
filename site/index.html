@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071d2a">
+  <meta name="description" content="A Sonabyss 2026 invitation for Mr. Sonkoli Sonam, from the organising committee.">
+  <title>A Message from the Deep | Sonabyss 2026</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f7f0dc;
+      --muted: #c2d4d2;
+      --sea: #071d2a;
+      --deep: #04121d;
+      --teal: #63d2c2;
+      --gold: #efc879;
+      --brass: #a97835;
+      --paper-ink: #29383a;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--deep);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    button, a { font: inherit; }
+
+    .intro {
+      position: relative;
+      display: grid;
+      min-height: 100vh;
+      min-height: 100svh;
+      place-items: center;
+      overflow: hidden;
+      isolation: isolate;
+      padding: 2rem;
+      text-align: center;
+      background:
+        linear-gradient(180deg, #071d2a52 0%, #071d2a82 48%, #04121de8 100%),
+        url("./shipwreck-background.png") center 47% / cover,
+        #071d2a;
+    }
+
+    .intro::before {
+      position: absolute;
+      inset: 1.1rem;
+      border: 1px solid #efc87959;
+      box-shadow: inset 0 0 0 5px #071d2a19;
+      content: "";
+      pointer-events: none;
+    }
+
+    .intro::after {
+      position: absolute;
+      right: 2rem;
+      bottom: 2rem;
+      color: #efc879a3;
+      content: "✧";
+      font-size: 1.1rem;
+      pointer-events: none;
+    }
+
+    .intro[hidden] {
+      display: none;
+    }
+
+    .intro-content {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 48rem);
+      padding: 2rem 0 8rem;
+      animation: emerge .8s .15s both;
+    }
+
+    .corner-logos {
+      position: absolute;
+      z-index: 2;
+      inset: 2rem 2.5rem auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+
+    .corner-logos img {
+      display: block;
+      width: auto;
+      height: 5.25rem;
+      max-width: min(28vw, 6rem);
+      object-fit: contain;
+    }
+
+    .eyebrow {
+      margin: 0 0 1rem;
+      color: #a8e0d4;
+      font: 700 .75rem/1.4 Arial, sans-serif;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      display: inline-block;
+      margin: 0 .8rem;
+      color: var(--gold);
+      content: "✦";
+      font-size: .68rem;
+      vertical-align: .08em;
+    }
+
+    .intro h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.1rem, 9vw, 6.8rem);
+      font-weight: 400;
+      letter-spacing: -.045em;
+      line-height: .98;
+      text-shadow: 0 5px 35px #001018, 0 0 50px #071d2a80;
+    }
+
+    .intro h1 span {
+      display: block;
+      margin-top: 1.2rem;
+      color: var(--gold);
+      font: 600 clamp(.85rem, 2.3vw, 1.05rem)/1.5 Arial, sans-serif;
+      letter-spacing: .32em;
+    }
+
+    .intro-copy {
+      max-width: 31rem;
+      margin: 1.8rem auto 2rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      text-shadow: 0 2px 12px #001018;
+    }
+
+    .dive-button {
+      display: inline-flex;
+      min-height: 3.25rem;
+      align-items: center;
+      justify-content: center;
+      gap: .7rem;
+      padding: .8rem 1.35rem;
+      border: 1px solid #efc879b8;
+      border-radius: .45rem;
+      background: linear-gradient(135deg, #153d49f2, #082a38f2);
+      color: var(--ink);
+      cursor: pointer;
+      font: 700 .8rem/1 Arial, sans-serif;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      box-shadow: 0 5px 24px #00101870, inset 0 0 0 3px #efc87912;
+      transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+    }
+
+    .dive-button:hover {
+      transform: translateY(-2px) scale(1.02);
+      background: linear-gradient(135deg, #205361, #0e3b48);
+      box-shadow: 0 9px 30px #0010188a, inset 0 0 0 3px #efc87922;
+    }
+
+    .dive-button:disabled {
+      cursor: wait;
+      opacity: .75;
+    }
+
+    .dive-button:focus-visible,
+    a:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 1.3rem;
+      left: 50%;
+      color: #d8e7df;
+      font: .68rem/1.4 Arial, sans-serif;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      transform: translateX(-50%);
+    }
+
+    .scroll-hint::before {
+      display: block;
+      width: 1px;
+      height: 1.6rem;
+      margin: 0 auto .5rem;
+      background: linear-gradient(var(--gold), transparent);
+      content: "";
+    }
+
+    .invitation {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(4rem, 10vw, 8rem) 1.25rem;
+      background:
+        radial-gradient(ellipse at 50% 0, #32616b52, transparent 52rem),
+        linear-gradient(180deg, #061924c9, #081e28e8 50%, #04121df2),
+        url("./shipwreck-background.png") center / cover fixed,
+        #04121d;
+    }
+
+    .invitation::before,
+    .invitation::after {
+      position: absolute;
+      z-index: 0;
+      color: #e2c27d;
+      opacity: .28;
+      pointer-events: none;
+    }
+
+    .invitation::before {
+      top: 4rem;
+      left: max(1rem, calc(50% - 34rem));
+      content: "🐙";
+      font-size: clamp(3rem, 8vw, 6rem);
+      transform: rotate(-17deg);
+      filter: drop-shadow(0 8px 18px #001018);
+    }
+
+    .invitation::after {
+      right: max(1rem, calc(50% - 34rem));
+      bottom: 5rem;
+      content: "⚓  ✧  ☠  ✧  ⚓";
+      color: var(--gold);
+      font-size: clamp(1.35rem, 4vw, 2.5rem);
+      letter-spacing: .2em;
+    }
+
+    .wreck-vignette {
+      position: absolute;
+      top: 1.5rem;
+      left: 50%;
+      z-index: 0;
+      width: clamp(7rem, 18vw, 11rem);
+      color: #efc879;
+      opacity: .34;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .wreck-vignette svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      overflow: visible;
+      filter: drop-shadow(0 3px 8px #00101880);
+    }
+
+    .compass-watermark {
+      position: absolute;
+      top: 3.5rem;
+      right: max(1rem, calc(50% - 34rem));
+      z-index: 0;
+      width: clamp(4rem, 10vw, 7rem);
+      color: #efc879;
+      opacity: .28;
+      animation: compass-turn 90s linear infinite;
+      pointer-events: none;
+    }
+
+    .compass-watermark circle,
+    .compass-watermark path {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.25;
+    }
+
+    .compass-watermark .north-star {
+      fill: currentColor;
+      stroke: none;
+    }
+
+    .letter {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 52rem);
+      margin: 0 auto;
+      padding: 12.5rem clamp(2.25rem, 9vw, 6.5rem) 3.5rem;
+      overflow: visible;
+      background: transparent;
+      color: var(--paper-ink);
+      animation: emerge 1.2s both;
+    }
+
+    .letter::before {
+      position: absolute;
+      z-index: 0;
+      inset: 0 0 -4rem;
+      background: url("./parchment-sheet.png?v=4") center / 100% 100% no-repeat;
+      content: "";
+      filter: drop-shadow(0 18px 24px #0008);
+      pointer-events: none;
+    }
+
+    .letter > *:not(.corner-logos) {
+      position: relative;
+      z-index: 1;
+    }
+
+    .letter-mark,
+    .letter h2,
+    .letter-subtitle,
+    .letter-rule,
+    .letter > p,
+    .event-details {
+      position: relative;
+    }
+
+    .letter p.letter-mark {
+      width: fit-content;
+      margin: 0 auto;
+      padding: .3rem 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: #705b38;
+      font: 700 .68rem/1.5 Arial, sans-serif;
+      letter-spacing: .23em;
+      text-align: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .letter .corner-logos { inset: 9rem 10rem auto; }
+    .letter .corner-logos img { height: 3rem; }
+
+    .letter-mark::before {
+      margin-right: .55rem;
+      color: var(--brass);
+      content: "⚓";
+      font-size: .85rem;
+    }
+
+    .letter h2 {
+      margin: 1rem 0 .45rem;
+      color: #254751;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 5.5vw, 3.5rem);
+      font-weight: 500;
+      letter-spacing: -.04em;
+      line-height: 1.04;
+      text-align: center;
+    }
+
+    .letter-subtitle {
+      margin: 0 0 1.7rem;
+      color: #78684a;
+      font: 700 .7rem/1.6 Arial, sans-serif;
+      letter-spacing: .16em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .letter-rule {
+      position: relative;
+      width: min(100%, 20rem);
+      height: 1px;
+      margin: 0 auto 1.5rem;
+      background: linear-gradient(90deg, transparent, #b89960 25%, #b89960 75%, transparent);
+    }
+
+    .letter-rule::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      padding: 0 .7rem;
+      color: var(--brass);
+      content: "✦  ⚓  ✦";
+      font-size: .75rem;
+      letter-spacing: .28em;
+      transform: translate(-50%, -50%);
+    }
+
+    .letter-body {
+      width: min(100%, 42rem);
+      margin: 1.25rem auto 0;
+      color: #354142;
+      font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
+      font-size: clamp(1rem, 1.2vw, 1.1rem);
+      line-height: 1.8;
+    }
+
+    .letter p {
+      margin: 0 0 1.05rem;
+      font-size: inherit;
+      line-height: inherit;
+    }
+
+    .salutation {
+      margin-bottom: 1rem !important;
+      color: #254751;
+      font-size: 1.08em !important;
+      font-weight: 700;
+    }
+
+    .recipient {
+      margin: 0 0 1.3rem !important;
+      padding: .35rem 0 .35rem 1rem;
+      border-left: 2px solid #ad8749;
+      color: #254751;
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: .98rem !important;
+      font-weight: 700;
+      line-height: 1.55 !important;
+    }
+
+    .recipient span {
+      display: block;
+      color: #6b6d63;
+      font: 400 .9rem/1.6 Arial, sans-serif;
+    }
+
+    .event-details {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+      padding: .9rem 0;
+      border-top: 1px solid #92724580;
+      border-bottom: 1px solid #92724580;
+    }
+
+    .detail-label {
+      display: block;
+      margin-bottom: .35rem;
+      color: #78684a;
+      font: 700 .65rem/1.4 Arial, sans-serif;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .detail-value {
+      color: #173e49;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .event-details > div::before {
+      display: block;
+      margin-bottom: .45rem;
+      color: #987748;
+      content: "✧";
+      font-size: .8rem;
+    }
+
+    .event-details > div:first-child::before { content: "◷"; }
+    .event-details > div:last-child::before { content: "⚓"; }
+
+    .signoff {
+      margin-top: 1.4rem !important;
+      margin-bottom: 0 !important;
+    }
+
+    .signoff strong {
+      display: block;
+      margin-top: .3rem;
+      color: #173e49;
+    }
+
+    .footer {
+      position: relative;
+      z-index: 1;
+      margin: 3rem auto 0;
+      color: #b7cbc8;
+      font: .75rem/1.7 Arial, sans-serif;
+      letter-spacing: .06em;
+      text-align: center;
+    }
+
+    .footer a {
+      display: inline-block;
+      padding: .55rem .9rem;
+      border: 1px solid #efc87973;
+      border-radius: 999px;
+      color: var(--gold);
+      text-decoration: none;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .footer a:hover {
+      background: #efc8791c;
+      color: #fff0c9;
+    }
+
+    .letter-footer-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .75rem;
+      width: min(100%, 13rem);
+      margin: 1.5rem auto 0;
+      color: #a17b42;
+      font-size: .78rem;
+      letter-spacing: .2em;
+    }
+
+    .letter-footer-ornament::before,
+    .letter-footer-ornament::after {
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(90deg, transparent, #b89960);
+      content: "";
+    }
+
+    .letter-footer-ornament::after {
+      transform: rotate(180deg);
+    }
+
+    .hidden { display: none; }
+
+    .reveal-transition {
+      position: fixed;
+      z-index: 5;
+      inset: 0;
+      overflow: hidden;
+      visibility: hidden;
+      display: grid;
+      place-items: center;
+      opacity: 0;
+      background: #04121d;
+    }
+
+    .reveal-transition::before {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, #041923cf, #071d2aeb 58%, #04121df5),
+        url("./shipwreck-background.png") center / cover,
+        #04121d;
+      content: "";
+      transition: opacity 1.2s ease;
+    }
+
+    .reveal-transition.is-active {
+      visibility: visible;
+      animation: reveal-cover .9s ease-out forwards;
+    }
+
+    .reveal-transition.is-leaving {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .reveal-transition.is-leaving::before {
+      opacity: 0;
+    }
+
+    .reveal-scene {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      width: min(90vw, 32rem);
+      transform: translate(-50%, -50%);
+    }
+
+    .reveal-transition.is-leaving .reveal-scene {
+      animation: scene-to-invitation 1.2s cubic-bezier(.7, 0, .3, 1) forwards;
+    }
+
+    .relic-flight {
+      text-align: center;
+      transform-origin: center;
+    }
+
+    .reveal-transition.is-leaving .relic-flight {
+      animation: relic-to-heading 1.2s cubic-bezier(.7, 0, .3, 1) forwards;
+    }
+
+    @keyframes scene-to-invitation {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+
+    @keyframes relic-to-heading {
+      from { transform: translate(0, 0) scale(1); }
+      to { transform: translate(var(--target-x, 0px), var(--target-y, -25vh)) scale(.16); }
+    }
+
+    .relic-mote {
+      position: absolute;
+      bottom: -1rem;
+      left: var(--mote-x);
+      width: var(--mote-size);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: #f3d58f;
+      box-shadow: 0 0 14px 3px #f3d58f78;
+      opacity: 0;
+      animation: relic-rise var(--mote-time) ease-out var(--mote-delay) infinite;
+    }
+
+    .relic-mote:nth-child(2) { --mote-x: 14%; --mote-size: .28rem; --mote-time: 4s; --mote-delay: .2s; }
+    .relic-mote:nth-child(3) { --mote-x: 28%; --mote-size: .18rem; --mote-time: 5s; --mote-delay: 1.1s; }
+    .relic-mote:nth-child(4) { --mote-x: 71%; --mote-size: .24rem; --mote-time: 4.5s; --mote-delay: .7s; }
+    .relic-mote:nth-child(5) { --mote-x: 86%; --mote-size: .16rem; --mote-time: 5.5s; --mote-delay: 1.5s; }
+
+    .relic-emblem {
+      position: relative;
+      display: grid;
+      width: clamp(6rem, 20vw, 9rem);
+      aspect-ratio: 1;
+      place-items: center;
+      margin: 0 auto 1.6rem;
+      border-radius: 50%;
+      color: var(--gold);
+      filter: drop-shadow(0 0 20px #efc87962);
+      animation: compass-turn 8s linear infinite;
+    }
+
+    .relic-emblem svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .relic-emblem .wheel-rim,
+    .relic-emblem .wheel-spoke,
+    .relic-emblem .wheel-hub {
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .relic-emblem .wheel-rim { stroke-width: 2.2; }
+    .relic-emblem .wheel-spoke { stroke-width: 3.4; }
+    .relic-emblem .wheel-hub { stroke-width: 2; }
+    .relic-emblem .wheel-grip { fill: currentColor; }
+
+    .transition-message {
+      margin: 0 auto;
+      color: #f7f0dc;
+      font: 700 .78rem/1.7 Arial, sans-serif;
+      letter-spacing: .24em;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 0 2px 18px #001018;
+    }
+
+    .transition-message span {
+      display: block;
+      margin-top: .6rem;
+      color: var(--gold);
+      font: 400 clamp(1.6rem, 6vw, 2.7rem)/1.15 Georgia, "Times New Roman", serif;
+      letter-spacing: -.02em;
+      text-transform: none;
+    }
+
+    @keyframes drift {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-9px); }
+    }
+
+    @keyframes emerge {
+      from { opacity: 0; transform: translateY(2rem) scale(.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes reveal-cover {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes compass-turn {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes relic-rise {
+      0% { transform: translate3d(0, 0, 0) scale(.6); opacity: 0; }
+      18% { opacity: .85; }
+      82% { opacity: .55; }
+      100% { transform: translate3d(1.5rem, -105vh, 0) scale(1.2); opacity: 0; }
+    }
+
+    @media (max-height: 650px) {
+      .intro-content {
+        padding-top: 4rem;
+        padding-bottom: 5rem;
+      }
+
+      .intro h1 {
+        font-size: clamp(2.75rem, 8vw, 5rem);
+      }
+
+      .intro-copy {
+        margin: 1.2rem auto 1.4rem;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .compass-watermark {
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 3.5rem;
+      }
+
+      .invitation::before {
+        top: 1.5rem;
+        left: .5rem;
+        font-size: 2.5rem;
+      }
+
+      .invitation::after {
+        right: .5rem;
+        bottom: 2rem;
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .intro { padding: 1.25rem; }
+      .intro-content { padding-bottom: 6rem; }
+      .invitation { background-attachment: scroll; }
+      .event-details { grid-template-columns: 1fr; }
+      .invitation::before { top: 1rem; }
+      .letter p.letter-mark {
+        padding: .3rem 0;
+        font-size: .58rem;
+        letter-spacing: .1em;
+        white-space: normal;
+        max-width: 100%;
+      }
+
+      .intro > .corner-logos { inset: 1.5rem 1.5rem auto; }
+      .corner-logos img { height: 4rem; max-width: 4rem; }
+      .letter {
+        width: calc(100% + 1.5rem);
+        margin-left: -.75rem;
+        padding: 12.5rem clamp(2.5rem, 13vw, 3.25rem) 4rem;
+      }
+      .letter-body {
+        margin-top: 1.25rem;
+      }
+      .signoff {
+        padding: 0 .5rem .75rem;
+        text-align: center;
+      }
+      .signoff strong:last-child {
+        margin-top: .55rem;
+      }
+      .letter .corner-logos {
+        top: 9.25rem;
+        right: auto;
+        left: 50%;
+        width: max-content;
+        align-items: center;
+        justify-content: center;
+        gap: .9rem;
+        transform: translateX(-50%);
+      }
+      .letter .corner-logos img { height: 2.5rem; max-width: 2.75rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="corner-logos" role="group" aria-label="NERIST and Sonabyss logos">
+        <img src="./nerist-logo.png" alt="NERIST logo">
+        <img src="./sonabyss-logo.png" alt="Sonabyss event logo">
+      </div>
+      <div class="intro-content">
+        <p class="eyebrow">A message from beneath the waves</p>
+        <h1 id="intro-title" tabindex="-1">Legacy of the<br>Lost Shipwreck<span>SONABYSS 2026</span></h1>
+        <p class="intro-copy">A little ocean, a hidden treasure, and a special invitation from the organising committee.</p>
+        <button class="dive-button" id="dive-button" type="button" aria-controls="invitation" aria-live="polite">
+          <span aria-hidden="true">↓</span> <span id="dive-label">Dive into the invitation</span>
+        </button>
+      </div>
+      <span class="scroll-hint" aria-hidden="true">Scroll to explore</span>
+    </section>
+
+    <section class="invitation hidden" id="invitation" aria-labelledby="letter-title" tabindex="-1">
+      <div class="wreck-vignette" aria-hidden="true">
+        <svg viewBox="0 0 220 100" fill="none">
+          <path d="M37 69c24 5 43 5 66 0 24-5 49-5 80 1l-11 14H56L37 69Z" fill="currentColor" fill-opacity=".18" stroke="currentColor" stroke-width="2"/>
+          <path d="M104 12v56M108 18l48 39h-48M99 27 65 57h34M29 91c18-7 31-7 48 0s31 7 48 0 31-7 48 0" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <circle cx="27" cy="36" r="3" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="188" cy="28" r="4" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="199" cy="15" r="2" stroke="currentColor" stroke-width="1.5"/>
+          <path d="m48 27 2 4 4 .5-3 3 .7 4.5-3.7-2-4 2 .8-4.5-3.1-3 4.2-.5L48 27Z" fill="currentColor" fill-opacity=".75"/>
+        </svg>
+      </div>
+      <svg class="compass-watermark" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="44"></circle>
+        <circle cx="50" cy="50" r="34"></circle>
+        <path d="M50 8v84M8 50h84M20.3 20.3l59.4 59.4m0-59.4L20.3 79.7"></path>
+        <path class="north-star" d="m50 12 6 32-6 6-6-6zm0 76-6-32 6-6 6 6zM12 50l32-6 6 6-6 6zm76 0-32 6-6-6 6-6z"></path>
+      </svg>
+      <article class="letter">
+        <div class="corner-logos" role="group" aria-label="NERIST and Sonabyss logos">
+          <img src="./nerist-logo.png" alt="NERIST logo">
+          <img src="./sonabyss-logo.png" alt="Sonabyss event logo">
+        </div>
+        <p class="letter-mark">From the Organising Committee</p>
+        <h2 id="letter-title">A Distinguished Invitation</h2>
+        <div class="letter-rule" aria-hidden="true"></div>
+
+        <div class="letter-body">
+          <p class="salutation">Respected Sir,</p>
+          <p class="recipient">Mr. Sonkoli Sonam<span>Executive Engineer, Smart City Itanagar</span></p>
+
+          <p>
+            On behalf of the organising committee of NERIST, it is our great pleasure
+            to invite you to Sonabyss 2026, our upcoming event.
+          </p>
+          <p>
+            As a valued alumnus of our institution, your journey and accomplishments
+            continue to inspire our community. We would be honoured if you would join
+            us as our <strong>Chief Guest</strong> and share this special occasion
+            with students, faculty, alumni, and guests.
+          </p>
+          <p>
+            Your presence would add great distinction to the celebration and make it
+            all the more memorable for everyone. We sincerely hope you will be able
+            to accept our invitation.
+          </p>
+
+          <div class="event-details" aria-label="Event details">
+            <div>
+              <span class="detail-label">Dates</span>
+              <span class="detail-value">4, 5 &amp; 6 November 2026</span>
+            </div>
+            <div>
+              <span class="detail-label">Venue</span>
+              <span class="detail-value">RACAF Ground</span>
+            </div>
+          </div>
+
+          <p>We look forward to welcoming you back to NERIST.</p>
+          <p class="signoff">With warm regards,<strong>Organising Committee</strong><strong>Sonabyss 2026 · NERIST</strong></p>
+          <div class="letter-footer-ornament" aria-hidden="true">✧ ⚓ ✧</div>
+        </div>
+      </article>
+      <p class="footer">With gratitude from the NERIST community · <a href="#intro-title">Return to the surface ↑</a></p>
+    </section>
+    <div class="reveal-transition" id="reveal-transition" aria-hidden="true">
+      <span class="relic-mote"></span>
+      <span class="relic-mote"></span>
+      <span class="relic-mote"></span>
+      <span class="relic-mote"></span>
+      <div class="reveal-scene" id="reveal-scene">
+        <div class="relic-flight" id="relic-flight">
+          <div class="relic-emblem" role="img" aria-label="A turning ship's steering wheel">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle class="wheel-rim" cx="50" cy="50" r="31"></circle>
+              <circle class="wheel-rim" cx="50" cy="50" r="8"></circle>
+              <path class="wheel-spoke" d="M50 19V42 M50 58V81 M19 50H42 M58 50H81 M28.1 28.1 44.3 44.3 M55.7 55.7 71.9 71.9 M71.9 28.1 55.7 44.3 M44.3 55.7 28.1 71.9"></path>
+              <circle class="wheel-hub" cx="50" cy="50" r="5"></circle>
+              <path class="wheel-grip" d="M47.5 7h5l2 9h-9z M47.5 84h5l2 9h-9z M7 47.5v5l9 2v-9z M84 47.5v5l9 2v-9z M18.5 18.5l3.6-3.6 7.1 5.8-5.7 5.7z M71 79.3l5.7-5.7 5.8 7.1-3.6 3.6z M81.5 18.5l3.6 3.6-5.8 7.1-5.7-5.7z M29 79.3l-5.7-5.7-7.1 5.8 3.6 3.6z"></path>
+            </svg>
+          </div>
+          <p class="transition-message">A message recovered<span>From the lost shipwreck</span></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const diveButton = document.querySelector("#dive-button");
+    const intro = document.querySelector(".intro");
+    const invitation = document.querySelector("#invitation");
+    const revealTransition = document.querySelector("#reveal-transition");
+    const revealScene = document.querySelector("#reveal-scene");
+    const returnLink = document.querySelector('.footer a[href="#intro-title"]');
+    const diveLabel = document.querySelector("#dive-label");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const coverDelay = reduceMotion ? 20 : 900;
+    const unlockDelay = reduceMotion ? 20 : 1200;
+
+    diveButton.addEventListener("click", () => {
+      diveButton.disabled = true;
+      diveLabel.textContent = "Recovering your invitation...";
+      revealTransition.classList.add("is-active");
+
+      window.setTimeout(() => {
+        intro.hidden = true;
+        invitation.classList.remove("hidden");
+        const previousScrollBehavior = document.documentElement.style.scrollBehavior;
+        document.documentElement.style.scrollBehavior = "auto";
+        window.scrollTo(0, 0);
+        const mark = document.querySelector(".letter-mark").getBoundingClientRect();
+        const title = document.querySelector("#letter-title").getBoundingClientRect();
+        const targetX = (mark.left + mark.right + title.left + title.right) / 4;
+        const targetY = (mark.top + title.bottom) / 2;
+        revealScene.style.setProperty("--target-x", `${targetX - window.innerWidth / 2}px`);
+        revealScene.style.setProperty("--target-y", `${targetY - window.innerHeight / 2}px`);
+        document.documentElement.style.scrollBehavior = previousScrollBehavior;
+        revealTransition.classList.remove("is-active");
+        revealTransition.classList.add("is-leaving");
+
+        window.setTimeout(() => {
+          revealTransition.classList.remove("is-leaving");
+          revealScene.style.removeProperty("--target-x");
+          revealScene.style.removeProperty("--target-y");
+          invitation.focus({ preventScroll: true });
+        }, unlockDelay);
+      }, coverDelay);
+    });
+
+    returnLink.addEventListener("click", (event) => {
+      event.preventDefault();
+      invitation.classList.add("hidden");
+      intro.hidden = false;
+      diveButton.disabled = false;
+      diveLabel.textContent = "Dive into the invitation";
+      revealTransition.classList.remove("is-active", "is-leaving");
+      revealScene.style.removeProperty("--target-x");
+      revealScene.style.removeProperty("--target-y");
+      window.scrollTo(0, 0);
+      document.querySelector("#intro-title").focus({ preventScroll: true });
+    });
+  </script>
+</body>
+</html>
