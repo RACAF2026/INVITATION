@@ -35,7 +35,6 @@
 
     button, a { font: inherit; }
 
-    /* Intro Section */
     .intro {
       position: relative;
       display: grid;
@@ -78,11 +77,11 @@
     .intro-backdrop::after {
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(circle at 50% 35%, #63d2c218 0%, transparent 55%),
-        linear-gradient(180deg, #071d2a45 0%, #071d2a88 48%, #04121df2 100%);
+      background: linear-gradient(180deg, #071d2a52 0%, #071d2a82 48%, #04121de8 100%);
       content: "";
     }
+
+
 
     .intro[hidden] {
       display: none;
@@ -91,16 +90,9 @@
     .intro-content {
       position: relative;
       z-index: 1;
-      width: min(100%, 50rem);
-      padding: 2.5rem 0 7rem;
-      animation: emerge .9s .15s both;
-      transition: transform .8s cubic-bezier(.4, 0, .2, 1), opacity .65s ease, filter .65s ease;
-    }
-
-    .intro.is-diving .intro-content {
-      opacity: 0;
-      transform: translateY(-4.5rem) scale(1.08);
-      filter: blur(6px);
+      width: min(100%, 48rem);
+      padding: 2rem 0 8rem;
+      animation: emerge .8s .15s both;
     }
 
     .corner-logos {
@@ -119,47 +111,16 @@
       height: 5.25rem;
       max-width: min(28vw, 6rem);
       object-fit: contain;
-      filter: drop-shadow(0 4px 14px #0009);
-    }
-
-    /* Decorative Nautical Emblem */
-    .nautical-crest {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 3.4rem;
-      height: 3.4rem;
-      margin: 0 auto .85rem;
-      border: 1px solid #efc87959;
-      border-radius: 50%;
-      background: radial-gradient(circle, #143846cc 0%, #061822cc 100%);
-      color: var(--gold);
-      box-shadow: 0 0 25px #efc87924, inset 0 0 12px #63d2c224;
-      animation: drift 5s ease-in-out infinite;
-    }
-
-    .nautical-crest svg {
-      width: 1.85rem;
-      height: 1.85rem;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
     }
 
     .eyebrow {
       width: fit-content;
       max-width: 100%;
-      margin: 0 auto .65rem;
-      padding: .35rem .95rem;
-      border: 1px solid #63d2c240;
-      border-radius: 999px;
-      background: #071d2a99;
-      backdrop-filter: blur(6px);
+      margin: 0 0 1rem;
+      margin-inline: auto;
       color: #a8e0d4;
-      font: 700 .72rem/1.4 Arial, sans-serif;
-      letter-spacing: .18em;
+      font: 700 .75rem/1.4 Arial, sans-serif;
+      letter-spacing: .16em;
       text-transform: uppercase;
     }
 
@@ -173,43 +134,17 @@
       text-shadow: 0 5px 35px #001018, 0 0 50px #071d2a80;
     }
 
-    .tentacle-initial {
-      display: inline-flex;
-      width: .62em;
-      height: 1.04em;
-      align-items: center;
-      justify-content: center;
-      margin-right: -.025em;
-      vertical-align: -.13em;
-      filter: drop-shadow(0 4px 8px #001018b0);
-    }
-
-    .tentacle-initial svg { display: block; width: 100%; height: 100%; overflow: visible; }
-    .tentacle-initial .tentacle-shape { fill: none; stroke: url("#tentacle-gradient"); stroke-linecap: round; stroke-width: 16; }
-    .tentacle-initial .sucker { fill: #173943; stroke: #f4d69a; stroke-width: 1.8; }
-
-    .intro h1 > span:last-child {
+    .tentacle-initial {       display: inline-flex;       width: .62em;       height: 1.04em;       align-items: center;       justify-content: center;       margin-right: -.025em;       vertical-align: -.13em;       filter: drop-shadow(0 4px 8px #001018b0);     }      .tentacle-initial svg { display: block; width: 100%; height: 100%; overflow: visible; }     .tentacle-initial .tentacle-shape { fill: none; stroke: url("#tentacle-gradient"); stroke-linecap: round; stroke-width: 16; }     .tentacle-initial .sucker { fill: #173943; stroke: #f4d69a; stroke-width: 1.8; }      .intro h1 > span:last-child {
       display: block;
-      margin-top: 1.25rem;
+      margin-top: 1.35rem;
       color: var(--gold);
       font: 600 clamp(.85rem, 2.3vw, 1.05rem)/1.5 Arial, sans-serif;
       letter-spacing: .32em;
     }
 
-    .festival-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      margin-top: .6rem;
-      color: #d8c394;
-      font: 600 .72rem/1.4 Arial, sans-serif;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
     .intro-copy {
-      max-width: 33rem;
-      margin: 1.4rem auto 2rem;
+      max-width: 31rem;
+      margin: 1.8rem auto 2rem;
       color: var(--muted);
       font-size: 1.05rem;
       line-height: 1.7;
@@ -217,43 +152,33 @@
     }
 
     .dive-button {
-      position: relative;
       display: inline-flex;
-      min-height: 3.45rem;
+      min-height: 3.25rem;
       align-items: center;
       justify-content: center;
-      gap: .75rem;
-      padding: .85rem 1.65rem;
-      border: 1px solid #efc879cc;
-      border-radius: .55rem;
-      background: linear-gradient(135deg, #174452f2, #072532f2);
+      gap: .7rem;
+      padding: .8rem 1.35rem;
+      border: 1px solid #efc879b8;
+      border-radius: .45rem;
+      background: linear-gradient(135deg, #153d49f2, #082a38f2);
       color: var(--ink);
       cursor: pointer;
       font: 700 .8rem/1 Arial, sans-serif;
-      letter-spacing: .14em;
+      letter-spacing: .12em;
       text-transform: uppercase;
-      box-shadow: 0 6px 28px #00101890, 0 0 20px #efc87926, inset 0 0 0 3px #efc87917;
-      transition: background .25s ease, transform .25s ease, box-shadow .25s ease;
-      animation: buttonPulse 3s ease-in-out infinite;
+      box-shadow: 0 5px 24px #00101870, inset 0 0 0 3px #efc87912;
+      transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
     }
 
     .dive-button:hover {
-      transform: translateY(-3px) scale(1.03);
-      background: linear-gradient(135deg, #215969, #0d3846);
-      box-shadow: 0 10px 34px #001018b0, 0 0 28px #efc87945, inset 0 0 0 3px #efc8792e;
+      transform: translateY(-2px) scale(1.02);
+      background: linear-gradient(135deg, #205361, #0e3b48);
+      box-shadow: 0 9px 30px #0010188a, inset 0 0 0 3px #efc87922;
     }
 
     .dive-button:disabled {
       cursor: wait;
       opacity: .75;
-      animation: none;
-    }
-
-    .dive-arrow {
-      display: inline-block;
-      color: var(--gold);
-      font-size: 1rem;
-      animation: bobArrow 1.6s ease-in-out infinite;
     }
 
     .dive-button:focus-visible,
@@ -262,7 +187,6 @@
       outline-offset: 4px;
     }
 
-    /* Invitation Section */
     .invitation {
       position: relative;
       isolation: isolate;
@@ -298,11 +222,11 @@
       z-index: 1;
       width: min(100%, 52rem);
       margin: 0 auto;
-      padding: 12.5rem clamp(2.25rem, 9vw, 6.5rem) 3.8rem;
+      padding: 12.5rem clamp(2.25rem, 9vw, 6.5rem) 3.5rem;
       overflow: visible;
       background: transparent;
       color: var(--paper-ink);
-      animation: letterUnroll 1.15s cubic-bezier(.22, 1, .36, 1) both;
+      animation: emerge 1.2s both;
     }
 
     .letter::before {
@@ -311,7 +235,7 @@
       inset: 0 0 -4rem;
       background: url("./parchment-sheet.png?v=4") center / 100% 100% no-repeat;
       content: "";
-      filter: drop-shadow(0 22px 32px #000a);
+      filter: drop-shadow(0 18px 24px #0008);
       pointer-events: none;
     }
 
@@ -334,6 +258,7 @@
       margin: 0 auto;
       padding: .3rem 0;
       border: 0;
+      border-radius: 0;
       background: transparent;
       color: #705b38;
       font: 700 .68rem/1.5 Arial, sans-serif;
@@ -344,13 +269,13 @@
     }
 
     .letter .corner-logos { inset: 9rem 10rem auto; }
-    .letter .corner-logos img { height: 3rem; filter: none; }
+    .letter .corner-logos img { height: 3rem; }
 
     .letter h2 {
-      margin: .85rem 0 .35rem;
+      margin: 1rem 0 .45rem;
       color: #254751;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2rem, 5.5vw, 3.4rem);
+      font-size: clamp(2rem, 5.5vw, 3.5rem);
       font-weight: 500;
       letter-spacing: -.04em;
       line-height: 1.04;
@@ -358,10 +283,10 @@
     }
 
     .letter-subtitle {
-      margin: 0 0 1.25rem;
-      color: #7a5c32;
-      font: 700 .68rem/1.6 Arial, sans-serif;
-      letter-spacing: .18em;
+      margin: 0 0 1.7rem;
+      color: #78684a;
+      font: 700 .7rem/1.6 Arial, sans-serif;
+      letter-spacing: .16em;
       text-align: center;
       text-transform: uppercase;
     }
@@ -380,9 +305,9 @@
       left: 50%;
       padding: 0 .7rem;
       color: var(--brass);
-      content: "✦  ⚓  ✦";
+      content: "✦  ✦";
       font-size: .75rem;
-      letter-spacing: .22em;
+      letter-spacing: .28em;
       transform: translate(-50%, -50%);
     }
 
@@ -403,7 +328,7 @@
     }
 
     .salutation {
-      margin-bottom: .85rem !important;
+      margin-bottom: 1rem !important;
       color: #254751;
       font-size: 1.08em !important;
       font-weight: 700;
@@ -411,14 +336,12 @@
     }
 
     .recipient {
-      margin: 0 0 1.35rem !important;
-      padding: .5rem .85rem .5rem 1rem;
-      border-left: 3px solid #ad8749;
-      border-radius: 0 .5rem .5rem 0;
-      background: linear-gradient(90deg, #ead6aa59, transparent);
+      margin: 0 0 1.3rem !important;
+      padding: .35rem 0 .35rem 1rem;
+      border-left: 2px solid #ad8749;
       color: #254751;
       font-family: "Segoe UI", Arial, sans-serif;
-      font-size: 1rem !important;
+      font-size: .98rem !important;
       font-weight: 700;
       line-height: 1.55 !important;
       text-align: left;
@@ -426,24 +349,14 @@
 
     .recipient span {
       display: block;
-      color: #635c4e;
-      font: 600 .88rem/1.55 Arial, sans-serif;
-    }
-
-    .highlight-quote {
-      margin: 1.15rem auto !important;
-      padding: .65rem 1rem;
-      border-top: 1px solid #b8996059;
-      border-bottom: 1px solid #b8996059;
-      color: #1f444e;
-      font-style: italic;
-      font-size: .98em !important;
+      color: #6b6d63;
+      font: 400 .9rem/1.6 Arial, sans-serif;
     }
 
     .event-details {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: .75rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .8rem;
       margin: 1.5rem 0;
       padding: 0;
     }
@@ -453,20 +366,20 @@
       justify-items: center;
       align-content: start;
       min-width: 0;
-      padding: .95rem .6rem;
+      padding: 1rem .7rem;
       border: 1px solid #a9824d80;
       border-radius: .75rem;
-      background: linear-gradient(145deg, #fff9e9e6, #ead6aa99);
+      background: linear-gradient(145deg, #fff9e9d9, #ead6aa8c);
       box-shadow: inset 0 1px #fff8, 0 5px 12px #694d281c;
       text-align: center;
     }
 
     .detail-icon {
       display: grid;
-      width: 2.35rem;
+      width: 2.45rem;
       aspect-ratio: 1;
       place-items: center;
-      margin-bottom: .55rem;
+      margin-bottom: .65rem;
       border: 1px solid #a9824d80;
       border-radius: 50%;
       background: #f2dfb9;
@@ -474,8 +387,8 @@
     }
 
     .detail-icon svg {
-      width: 1.1rem;
-      height: 1.1rem;
+      width: 1.15rem;
+      height: 1.15rem;
       fill: none;
       stroke: currentColor;
       stroke-linecap: round;
@@ -485,61 +398,26 @@
 
     .detail-label {
       display: block;
-      margin-bottom: .35rem;
+      margin-bottom: .4rem;
       color: #78684a;
-      font: 700 .62rem/1.4 Arial, sans-serif;
+      font: 700 .65rem/1.4 Arial, sans-serif;
       letter-spacing: .12em;
       text-transform: uppercase;
     }
 
     .detail-value {
       color: #173e49;
-      font: 700 .92rem/1.4 Georgia, "Times New Roman", serif;
-    }
-
-    /* Royal Wax Seal Stamp */
-    .wax-seal-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 1.35rem auto .75rem;
-    }
-
-    .wax-seal {
-      display: grid;
-      place-items: center;
-      width: 3.6rem;
-      height: 3.6rem;
-      border: 2px dashed #efc879b3;
-      border-radius: 50%;
-      background: radial-gradient(circle at 35% 30%, #9e2a2b, #6b1416 70%, #4a0a0c 100%);
-      color: #f4d69a;
-      box-shadow:
-        0 4px 12px #3a1a084d,
-        inset 0 2px 6px #ff9b854d,
-        inset 0 -3px 8px #2b040599;
-      font: 700 .58rem/1.1 Georgia, serif;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      transform: rotate(-6deg);
-    }
-
-    .wax-seal svg {
-      width: 1.55rem;
-      height: 1.55rem;
-      fill: none;
-      stroke: #f4d69a;
-      stroke-width: 1.6;
+      font: 700 .98rem/1.45 Georgia, "Times New Roman", serif;
     }
 
     .signoff {
-      margin-top: .5rem !important;
+      margin-top: 1.4rem !important;
       margin-bottom: 0 !important;
     }
 
     .signoff strong {
       display: block;
-      margin-top: .28rem;
+      margin-top: .3rem;
       color: #173e49;
     }
 
@@ -555,18 +433,17 @@
 
     .footer a {
       display: inline-block;
-      padding: .55rem 1rem;
+      padding: .55rem .9rem;
       border: 1px solid #efc87973;
       border-radius: 999px;
       color: var(--gold);
       text-decoration: none;
-      transition: background .2s ease, color .2s ease, transform .2s ease;
+      transition: background .2s ease, color .2s ease;
     }
 
     .footer a:hover {
       background: #efc8791c;
       color: #fff0c9;
-      transform: translateY(-2px);
     }
 
     .letter-footer-ornament {
@@ -574,8 +451,8 @@
       align-items: center;
       justify-content: center;
       gap: .75rem;
-      width: min(100%, 14rem);
-      margin: 1.35rem auto 0;
+      width: min(100%, 13rem);
+      margin: 1.5rem auto 0;
       color: #a17b42;
       font-size: .78rem;
       letter-spacing: .2em;
@@ -595,155 +472,9 @@
 
     .hidden { display: none; }
 
-    /* Interactive HTML Dive Transition Overlay & HUD */
-    .reveal-transition {
-      position: fixed;
-      z-index: 5;
-      inset: 0;
-      overflow: hidden;
-      visibility: hidden;
-      opacity: 0;
-      background: #04121d;
-      pointer-events: none;
-      transition: opacity .65s ease, visibility 0s linear .65s;
-    }
-
-    .reveal-transition canvas {
-      position: absolute;
-      inset: 0;
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-
-    .reveal-transition.is-active {
-      visibility: visible;
-      opacity: 1;
-      pointer-events: auto;
-      transition-delay: 0s;
-    }
-
-    .reveal-transition.is-leaving {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .dive-hud {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      text-align: center;
-      pointer-events: none;
-    }
-
-    .dive-compass-ring {
-      position: relative;
-      display: grid;
-      place-items: center;
-      width: 6.5rem;
-      height: 6.5rem;
-      margin-bottom: 1.5rem;
-      border: 1px solid #efc87966;
-      border-radius: 50%;
-      background: radial-gradient(circle, #0b2d3dcc 0%, transparent 72%);
-      box-shadow: 0 0 35px #63d2c229, inset 0 0 20px #efc87924;
-    }
-
-    .dive-compass-ring::before {
-      position: absolute;
-      inset: -7px;
-      border: 1px dashed #63d2c266;
-      border-radius: 50%;
-      content: "";
-      animation: spinSlow 8s linear infinite;
-    }
-
-    .dive-depth-number {
-      color: var(--gold);
-      font: 700 1.35rem/1.1 "Segoe UI", Arial, sans-serif;
-      letter-spacing: .06em;
-      text-shadow: 0 0 14px #efc87980;
-    }
-
-    .dive-depth-unit {
-      display: block;
-      margin-top: .2rem;
-      color: #a8e0d4;
-      font: 700 .58rem/1 Arial, sans-serif;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-    }
-
-    .dive-zone-badge {
-      margin: 0 0 .6rem;
-      padding: .28rem .85rem;
-      border: 1px solid #63d2c24d;
-      border-radius: 999px;
-      background: #061b26cc;
-      color: #63d2c2;
-      font: 700 .65rem/1.3 Arial, sans-serif;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-    }
-
-    .dive-caption-title {
-      margin: 0 0 .45rem;
-      color: var(--ink);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.45rem, 4vw, 2.25rem);
-      font-weight: 400;
-      letter-spacing: -.02em;
-      text-shadow: 0 4px 20px #000c;
-      transition: opacity .25s ease, transform .25s ease;
-    }
-
-    .dive-caption-sub {
-      max-width: 26rem;
-      margin: 0 auto 1.4rem;
-      color: #c2d4d2;
-      font-size: clamp(.85rem, 2vw, .98rem);
-      line-height: 1.5;
-      text-shadow: 0 2px 10px #000c;
-    }
-
-    .dive-progress-track {
-      width: min(78vw, 16rem);
-      height: 3px;
-      overflow: hidden;
-      border-radius: 999px;
-      background: #ffffff1f;
-    }
-
-    .dive-progress-bar {
-      width: 0%;
-      height: 100%;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #63d2c2, #efc879);
-      box-shadow: 0 0 12px #efc879;
-    }
-
-    @keyframes spinSlow {
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes drift {
+    .reveal-transition {       position: fixed;       z-index: 5;       inset: 0;       overflow: hidden;       visibility: hidden;       opacity: 0;       background: #04121d;       transition: opacity .6s ease, visibility 0s linear .6s;     }      .transition-video {       position: absolute;       inset: 0;       display: block;       width: 100%;       height: 100%;       object-fit: contain; background: #04121d;     }      .reveal-transition.is-active {       visibility: visible;       opacity: 1;       transition-delay: 0s;     }      .reveal-transition.is-leaving {       opacity: 0;       visibility: hidden;     }      @keyframes drift {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-7px); }
-    }
-
-    @keyframes bobArrow {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(4px); }
-    }
-
-    @keyframes buttonPulse {
-      0%, 100% { box-shadow: 0 6px 28px #00101890, 0 0 18px #efc87922, inset 0 0 0 3px #efc87917; }
-      50% { box-shadow: 0 8px 32px #001018b0, 0 0 28px #efc8794d, inset 0 0 0 3px #efc8792b; }
+      50% { transform: translateY(-9px); }
     }
 
     @keyframes emerge {
@@ -751,82 +482,63 @@
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
-    @keyframes letterUnroll {
-      from {
-        opacity: 0;
-        transform: perspective(1000px) rotateX(14deg) translateY(3.5rem) scale(.94);
-      }
-      to {
-        opacity: 1;
-        transform: perspective(1000px) rotateX(0deg) translateY(0) scale(1);
-      }
-    }
-
     @media (max-height: 650px) {
       .intro-content {
-        padding-top: 3.5rem;
-        padding-bottom: 4.5rem;
+        padding-top: 4rem;
+        padding-bottom: 5rem;
       }
+
       .intro h1 {
-        font-size: clamp(2.6rem, 8vw, 4.8rem);
+        font-size: clamp(2.75rem, 8vw, 5rem);
       }
+
       .intro-copy {
-        margin: 1rem auto 1.3rem;
+        margin: 1.2rem auto 1.4rem;
       }
     }
 
-    @media (max-width: 580px) {
+    @media (max-width: 540px) {
       .intro { padding: 1.25rem; }
-      .intro-content { padding-bottom: 5.5rem; }
-      .nautical-crest { width: 2.85rem; height: 2.85rem; margin-bottom: .65rem; }
-      .nautical-crest svg { width: 1.5rem; height: 1.5rem; }
-      .eyebrow { font-size: .62rem; letter-spacing: .13em; padding: .3rem .75rem; }
-      .intro h1 { font-size: clamp(2rem, 8.5vw, 2.55rem); line-height: 1.08; }
-      .tentacle-initial { width: .58em; height: 1em; vertical-align: -.12em; }
+      .intro-content { padding-bottom: 6rem; }
+      .eyebrow { font-size: .68rem; letter-spacing: .13em; }
+      .intro h1 { font-size: clamp(2rem, 8.5vw, 2.55rem); line-height: 1.08; }       .tentacle-initial { width: .58em; height: 1em; vertical-align: -.12em; }
       .intro h1 > span:last-child {
-        margin-top: .95rem;
+        margin-top: 1.05rem;
         font-size: .76rem;
         letter-spacing: .24em;
       }
-      .festival-pill { font-size: .63rem; letter-spacing: .12em; }
       .intro-copy {
-        margin: 1.15rem auto 1.5rem;
+        margin: 1.4rem auto 1.6rem;
         font-size: .92rem;
         line-height: 1.6;
       }
-      .dive-button { font-size: .72rem; padding: .8rem 1.3rem; }
+      .dive-button { font-size: .72rem; }
       .invitation {
         padding-top: 0;
         padding-bottom: 3rem;
         background-attachment: scroll;
       }
-      .event-details {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: .55rem;
-      }
-      .event-details > div:last-child {
-        grid-column: 1 / -1;
-      }
-      .event-details > div { padding: .8rem .45rem; }
+      .event-details { gap: .55rem; }
+      .event-details > div { padding: .85rem .45rem; }
       .letter p.letter-mark {
-        padding: .25rem 0;
+        padding: .3rem 0;
         font-size: .54rem;
         letter-spacing: .1em;
         white-space: normal;
         max-width: 100%;
       }
+
       .letter h2 { font-size: clamp(1.65rem, 7vw, 2rem); }
-      .letter-subtitle { font-size: .58rem; letter-spacing: .13em; margin-bottom: 1rem; }
       .letter-body {
-        font-size: .93rem;
+        font-size: .94rem;
         line-height: 1.65;
       }
       .recipient { font-size: .9rem !important; }
-      .recipient span { font-size: .81rem; }
+      .recipient span { font-size: .82rem; }
       .detail-label { font-size: .55rem; letter-spacing: .08em; }
       .detail-value { font-size: .84rem; }
       .footer { font-size: .68rem; }
-      .intro > .corner-logos { inset: 1.6rem 1.6rem auto; }
+      .intro > .corner-logos { inset: 2rem 2rem auto; }
       .intro > .corner-logos img { height: 2.75rem; max-width: 2.75rem; }
       .letter {
         width: calc(100% + 2.5rem);
@@ -838,14 +550,14 @@
         background-size: 112% calc(100% + 3rem);
       }
       .letter-body {
-        margin-top: 1.15rem;
+        margin-top: 1.25rem;
       }
       .signoff {
         padding: 0 .5rem .75rem;
         text-align: center;
       }
       .signoff strong:last-child {
-        margin-top: .45rem;
+        margin-top: .55rem;
       }
       .letter .corner-logos {
         top: 5rem;
@@ -861,9 +573,9 @@
     }
 
     @media (max-width: 540px) and (max-height: 720px) {
-      .intro-content { padding: 3.2rem 0 4.2rem; }
-      .intro h1 > span:last-child { margin-top: .85rem; }
-      .intro-copy { margin: 1rem auto 1.2rem; }
+      .intro-content { padding: 3.5rem 0 4.5rem; }
+      .intro h1 > span:last-child { margin-top: .9rem; }
+      .intro-copy { margin: 1.05rem auto 1.2rem; }
       .letter { padding-top: 7rem; padding-bottom: 2.5rem; }
       .letter .corner-logos { top: 4rem; }
     }
@@ -891,25 +603,11 @@
         <img src="./sonabyss-logo.png" alt="Sonabyss event logo">
       </div>
       <div class="intro-content">
-        <div class="nautical-crest" aria-hidden="true">
-          <svg viewBox="0 0 24 24">
-            <circle cx="12" cy="5" r="2"></circle>
-            <line x1="12" y1="7" x2="12" y2="21"></line>
-            <path d="M5 12H2a10 10 0 0 0 20 0h-3"></path>
-            <line x1="8" y1="10" x2="16" y2="10"></line>
-          </svg>
-        </div>
         <p class="eyebrow">A message from beneath the waves</p>
-        <h1 id="intro-title" tabindex="-1" aria-label="Legacy of the Lost Shipwreck SONABYSS 2026">
-          Legacy of the<br>Lost <span class="tentacle-initial" aria-hidden="true"><svg viewBox="0 0 64 96" aria-hidden="true" focusable="false"><defs><linearGradient id="tentacle-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1d49b"></stop><stop offset=".48" stop-color="#c58f52"></stop><stop offset="1" stop-color="#78b9aa"></stop></linearGradient></defs><path class="tentacle-shape" d="M45 11C31 1 14 8 14 20c0 13 35 13 37 28 2 15-30 15-39 27-10 13 3 24 23 14"></path><g class="sucker"><circle cx="30" cy="11" r="2.2"></circle><circle cx="20" cy="19" r="2.2"></circle><circle cx="25" cy="30" r="2.2"></circle><circle cx="39" cy="35" r="2.2"></circle><circle cx="43" cy="48" r="2.2"></circle><circle cx="32" cy="59" r="2.2"></circle><circle cx="18" cy="67" r="2.2"></circle><circle cx="17" cy="79" r="2.2"></circle><circle cx="29" cy="86" r="2.2"></circle></g></svg></span>hipwreck<span>SONABYSS 2026</span>
-        </h1>
-        <div class="festival-pill">✦ Annual Cultural Fiesta of NERIST · RACAF ✦</div>
-        <p class="intro-copy">
-          Across uncharted waters and sunken legends lies a treasured scroll—bearing our warmest invitation from the Organising Committee.
-        </p>
+        <h1 id="intro-title" tabindex="-1" aria-label="Legacy of the Lost Shipwreck SONABYSS 2026">Legacy of the<br>Lost <span class="tentacle-initial" aria-hidden="true"><svg viewBox="0 0 64 96" aria-hidden="true" focusable="false"><defs><linearGradient id="tentacle-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1d49b"></stop><stop offset=".48" stop-color="#c58f52"></stop><stop offset="1" stop-color="#78b9aa"></stop></linearGradient></defs><path class="tentacle-shape" d="M45 11C31 1 14 8 14 20c0 13 35 13 37 28 2 15-30 15-39 27-10 13 3 24 23 14"></path><g class="sucker"><circle cx="30" cy="11" r="2.2"></circle><circle cx="20" cy="19" r="2.2"></circle><circle cx="25" cy="30" r="2.2"></circle><circle cx="39" cy="35" r="2.2"></circle><circle cx="43" cy="48" r="2.2"></circle><circle cx="32" cy="59" r="2.2"></circle><circle cx="18" cy="67" r="2.2"></circle><circle cx="17" cy="79" r="2.2"></circle><circle cx="29" cy="86" r="2.2"></circle></g></svg></span>hipwreck<span>SONABYSS 2026</span></h1>
+        <p class="intro-copy">A little ocean, a hidden treasure, and a special invitation from the organising committee.</p>
         <button class="dive-button" id="dive-button" type="button" aria-controls="invitation" aria-live="polite">
-          <span class="dive-arrow" aria-hidden="true">↓</span>
-          <span id="dive-label">Dive into the invitation</span>
+          <span aria-hidden="true">↓</span> <span id="dive-label">Dive into the invitation</span>
         </button>
       </div>
     </section>
@@ -925,9 +623,8 @@
           <img src="./nerist-logo.png" alt="NERIST logo">
           <img src="./sonabyss-logo.png" alt="Sonabyss event logo">
         </div>
-        <p class="letter-mark">From the Organising Committee · RACAF</p>
+        <p class="letter-mark">From the Organising Committee</p>
         <h2 id="letter-title">A Distinguished Invitation</h2>
-        <p class="letter-subtitle">Theme: Legacy of the Lost Shipwreck</p>
         <div class="letter-rule" aria-hidden="true"></div>
 
         <div class="letter-body">
@@ -936,16 +633,13 @@
 
           <p>
             On behalf of the organising committee of NERIST, it is our great pleasure
-            to invite you to <strong>Sonabyss 2026</strong>, our flagship cultural extravaganza.
+            to invite you to Sonabyss 2026, our upcoming event.
           </p>
           <p>
             As a valued alumnus of our institution, your journey and accomplishments
             continue to inspire our community. We would be honoured if you would join
             us as our <strong>Chief Guest</strong> and share this special occasion
             with students, faculty, alumni, and guests.
-          </p>
-          <p class="highlight-quote">
-            “Like a timeless treasure recovered from the deep, your presence will illuminate our celebration and inspire generations of NERISTians.”
           </p>
           <p>
             Your presence would add great distinction to the celebration and make it
@@ -962,7 +656,7 @@
                 </svg>
               </span>
               <span class="detail-label">Date</span>
-              <span class="detail-value">4 November<br>2026</span>
+              <span class="detail-value">4 November</span>
             </div>
             <div>
               <span class="detail-icon" aria-hidden="true">
@@ -974,291 +668,17 @@
               <span class="detail-label">Venue</span>
               <span class="detail-value">RACAF Ground<br>NERIST</span>
             </div>
-            <div>
-              <span class="detail-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                </svg>
-              </span>
-              <span class="detail-label">Honour</span>
-              <span class="detail-value">Chief Guest<br>Sonabyss ’26</span>
-            </div>
           </div>
 
-          <p>We look forward to welcoming you back home to NERIST.</p>
-
-          <div class="wax-seal-row" aria-hidden="true">
-            <div class="wax-seal" title="Official Seal of Sonabyss 2026">
-              <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="5" r="2"></circle>
-                <line x1="12" y1="7" x2="12" y2="21"></line>
-                <path d="M5 12H2a10 10 0 0 0 20 0h-3"></path>
-                <line x1="8" y1="10" x2="16" y2="10"></line>
-              </svg>
-            </div>
-          </div>
-
-          <p class="signoff">
-            With warm regards,
-            <strong>Organising Committee (RACAF)</strong>
-            <strong>Sonabyss 2026 · NERIST, Nirjuli</strong>
-          </p>
-          <div class="letter-footer-ornament" aria-hidden="true">✧ ⚓ ✧</div>
+          <p>We look forward to welcoming you back to NERIST.</p>
+          <p class="signoff">With warm regards,<strong>Organising Committee</strong><strong>Sonabyss 2026 · NERIST</strong></p>
+          <div class="letter-footer-ornament" aria-hidden="true">✧ ✧</div>
         </div>
       </article>
       <p class="footer">With gratitude from the NERIST community · <a href="#intro-title">Return to the surface ↑</a></p>
     </section>
+        <div class="reveal-transition" id="reveal-transition" aria-hidden="true">       <video class="transition-video" id="transition-video" muted playsinline preload="auto">         <source src="./transition-laptop.mp4" type="video/mp4">       </video>     </div>   </main>
 
-    <!-- HTML5 Interactive Dive Transition Overlay -->
-    <div class="reveal-transition" id="reveal-transition" aria-hidden="true">
-      <canvas id="dive-canvas"></canvas>
-      <div class="dive-hud">
-        <div class="dive-compass-ring">
-          <div>
-            <span class="dive-depth-number" id="dive-depth-number">0 m</span>
-            <span class="dive-depth-unit">Depth</span>
-          </div>
-        </div>
-        <p class="dive-zone-badge" id="dive-zone-badge">Sunlight Zone</p>
-        <h3 class="dive-caption-title" id="dive-caption-title">Leaving the surface behind...</h3>
-        <p class="dive-caption-sub" id="dive-caption-sub">Submerging into the uncharted waters of Sonabyss 2026</p>
-        <div class="dive-progress-track">
-          <div class="dive-progress-bar" id="dive-progress-bar"></div>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <script>
-    const diveButton = document.querySelector("#dive-button");
-    const intro = document.querySelector(".intro");
-    const invitation = document.querySelector("#invitation");
-    const revealTransition = document.querySelector("#reveal-transition");
-    const diveCanvas = document.querySelector("#dive-canvas");
-    const depthNumberEl = document.querySelector("#dive-depth-number");
-    const zoneBadgeEl = document.querySelector("#dive-zone-badge");
-    const captionTitleEl = document.querySelector("#dive-caption-title");
-    const captionSubEl = document.querySelector("#dive-caption-sub");
-    const progressBarEl = document.querySelector("#dive-progress-bar");
-    const returnLink = document.querySelector('.footer a[href="#intro-title"]');
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let animationFrameId = null;
-
-    const diveStages = [
-      {
-        zone: "Sunlight Zone · 0–300m",
-        title: "Leaving the surface behind...",
-        sub: "Submerging into the uncharted waters of Sonabyss 2026"
-      },
-      {
-        zone: "Twilight Currents · 300–850m",
-        title: "Through the sunken currents...",
-        sub: "Where echoes of the Lost Shipwreck still linger in the deep"
-      },
-      {
-        zone: "Abyssal Sanctum · 1200m",
-        title: "Uncovering the royal parchment...",
-        sub: "A distinguished invitation awaits you from NERIST"
-      }
-    ];
-
-    const revealInvitation = () => {
-      if (!revealTransition.classList.contains("is-active")) return;
-
-      intro.hidden = true;
-      intro.classList.remove("is-diving");
-      invitation.classList.remove("hidden");
-      window.scrollTo(0, 0);
-
-      if (reduceMotion) {
-        revealTransition.classList.remove("is-active");
-        invitation.focus({ preventScroll: true });
-        return;
-      }
-
-      revealTransition.classList.add("is-leaving");
-      window.setTimeout(() => {
-        revealTransition.classList.remove("is-active", "is-leaving");
-        if (animationFrameId) cancelAnimationFrame(animationFrameId);
-        invitation.focus({ preventScroll: true });
-      }, 650);
-    };
-
-    function playHtmlOceanDive() {
-      const ctx = diveCanvas.getContext("2d");
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      const W = window.innerWidth;
-      const H = window.innerHeight;
-
-      diveCanvas.width = W * dpr;
-      diveCanvas.height = H * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-      const particleCount = W < 600 ? 85 : 135;
-      const particles = Array.from({ length: particleCount }, () => ({
-        x: Math.random() * W,
-        y: Math.random() * H + H * 0.2,
-        r: Math.random() * 6.5 + 1.5,
-        speed: Math.random() * 15 + 7.5,
-        wobble: Math.random() * Math.PI * 2,
-        drift: (Math.random() - 0.5) * 2.4,
-        isGold: Math.random() < 0.32,
-        alpha: Math.random() * 0.65 + 0.25
-      }));
-
-      // Expanding sonar rings
-      const sonarRings = [
-        { birth: 0.05, maxR: Math.min(W, H) * 0.55 },
-        { birth: 0.38, maxR: Math.min(W, H) * 0.65 },
-        { birth: 0.70, maxR: Math.min(W, H) * 0.75 }
-      ];
-
-      const duration = 3100; // 3.1-second cinematic dive
-      const startTime = performance.now();
-      let currentStageIndex = -1;
-
-      function render(now) {
-        const elapsed = now - startTime;
-        const p = Math.min(elapsed / duration, 1);
-
-        // Update HUD Depth & Text Stages
-        const depthMeters = Math.round(p * 1200);
-        depthNumberEl.textContent = `${depthMeters} m`;
-        progressBarEl.style.width = `${(p * 100).toFixed(1)}%`;
-
-        const stageIdx = p < 0.36 ? 0 : p < 0.72 ? 1 : 2;
-        if (stageIdx !== currentStageIndex) {
-          currentStageIndex = stageIdx;
-          zoneBadgeEl.textContent = diveStages[stageIdx].zone;
-          captionTitleEl.textContent = diveStages[stageIdx].title;
-          captionSubEl.textContent = diveStages[stageIdx].sub;
-        }
-
-        // Deepening abyss ocean background (#0a2c3d -> #071d2a -> #04121d)
-        const bgGrad = ctx.createLinearGradient(0, 0, 0, H);
-        bgGrad.addColorStop(0, p < 0.4 ? "#0b2e40" : "#071d2a");
-        bgGrad.addColorStop(0.55, "#061924");
-        bgGrad.addColorStop(1, "#030e17");
-        ctx.fillStyle = bgGrad;
-        ctx.fillRect(0, 0, W, H);
-
-        // Volumetric underwater god-rays from surface fading as depth increases
-        const rayAlpha = Math.max(0, (1 - p * 1.3) * 0.34);
-        if (rayAlpha > 0) {
-          for (let i = -1; i <= 1; i++) {
-            ctx.save();
-            ctx.beginPath();
-            const topX = W * 0.5 + i * (W * 0.16);
-            ctx.moveTo(topX - 35, 0);
-            ctx.lineTo(topX + 35, 0);
-            ctx.lineTo(topX + i * 130 + 140, H * 0.85);
-            ctx.lineTo(topX + i * 130 - 140, H * 0.85);
-            ctx.closePath();
-            const beamGrad = ctx.createLinearGradient(0, 0, 0, H * 0.85);
-            beamGrad.addColorStop(0, `rgba(99, 210, 194, ${rayAlpha})`);
-            beamGrad.addColorStop(0.5, `rgba(239, 200, 121, ${rayAlpha * 0.3})`);
-            beamGrad.addColorStop(1, "rgba(4, 18, 29, 0)");
-            ctx.fillStyle = beamGrad;
-            ctx.fill();
-            ctx.restore();
-          }
-        }
-
-        // Expanding sonar pulse rings around center
-        sonarRings.forEach((ring) => {
-          if (p > ring.birth) {
-            const rp = Math.min((p - ring.birth) / 0.35, 1);
-            const radius = rp * ring.maxR;
-            const alpha = (1 - rp) * 0.35;
-            ctx.beginPath();
-            ctx.arc(W * 0.5, H * 0.5, radius, 0, Math.PI * 2);
-            ctx.strokeStyle = `rgba(239, 200, 121, ${alpha})`;
-            ctx.lineWidth = 1.6;
-            ctx.stroke();
-          }
-        });
-
-        // Rush bubbles & golden shipwreck treasure embers upward
-        const velocityMultiplier = 1 + Math.sin(p * Math.PI) * 2.1;
-        particles.forEach((b) => {
-          b.y -= b.speed * velocityMultiplier;
-          b.x += Math.sin(elapsed * 0.005 + b.wobble) * b.drift;
-
-          if (b.y < -25) {
-            b.y = H + 25;
-            b.x = Math.random() * W;
-          }
-
-          ctx.beginPath();
-          ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
-
-          if (b.isGold) {
-            ctx.fillStyle = `rgba(239, 200, 121, ${b.alpha})`;
-            ctx.shadowColor = "#efc879";
-            ctx.shadowBlur = 10;
-            ctx.fill();
-            ctx.shadowBlur = 0;
-          } else {
-            ctx.fillStyle = `rgba(168, 224, 212, ${b.alpha * 0.22})`;
-            ctx.strokeStyle = `rgba(99, 210, 194, ${b.alpha})`;
-            ctx.lineWidth = 1.4;
-            ctx.fill();
-            ctx.stroke();
-          }
-        });
-
-        // Golden parchment treasure aura emerging from the seabed at the end
-        if (p > 0.62) {
-          const glowP = (p - 0.62) / 0.38;
-          const treasureGlow = ctx.createRadialGradient(
-            W * 0.5,
-            H * 0.55,
-            10,
-            W * 0.5,
-            H * 0.55,
-            Math.max(W, H) * 0.65
-          );
-          treasureGlow.addColorStop(0, `rgba(239, 200, 121, ${glowP * 0.28})`);
-          treasureGlow.addColorStop(0.5, `rgba(99, 210, 194, ${glowP * 0.1})`);
-          treasureGlow.addColorStop(1, "rgba(4, 18, 29, 0)");
-          ctx.fillStyle = treasureGlow;
-          ctx.fillRect(0, 0, W, H);
-        }
-
-        if (p < 1) {
-          animationFrameId = requestAnimationFrame(render);
-        } else {
-          revealInvitation();
-        }
-      }
-
-      animationFrameId = requestAnimationFrame(render);
-    }
-
-    diveButton.addEventListener("click", () => {
-      diveButton.disabled = true;
-      intro.classList.add("is-diving");
-      revealTransition.classList.add("is-active");
-
-      if (reduceMotion) {
-        revealInvitation();
-        return;
-      }
-
-      playHtmlOceanDive();
-    });
-
-    returnLink.addEventListener("click", (event) => {
-      event.preventDefault();
-      if (animationFrameId) cancelAnimationFrame(animationFrameId);
-      invitation.classList.add("hidden");
-      intro.hidden = false;
-      intro.classList.remove("is-diving");
-      diveButton.disabled = false;
-      revealTransition.classList.remove("is-active", "is-leaving");
-      window.scrollTo(0, 0);
-      document.querySelector("#intro-title").focus({ preventScroll: true });
-    });
-  </script>
+  <script>     const diveButton = document.querySelector("#dive-button");     const intro = document.querySelector(".intro");     const invitation = document.querySelector("#invitation");     const revealTransition = document.querySelector("#reveal-transition");     const transitionVideo = document.querySelector("#transition-video");     if (window.matchMedia("(max-width: 767px)").matches) transitionVideo.src = "./transition.mp4";     const returnLink = document.querySelector('.footer a[href="#intro-title"]');     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;      const revealInvitation = () => {       if (!revealTransition.classList.contains("is-active")) return;        intro.hidden = true;       invitation.classList.remove("hidden");       window.scrollTo(0, 0);        if (reduceMotion) {         revealTransition.classList.remove("is-active");         transitionVideo.pause();         invitation.focus({ preventScroll: true });         return;       }        revealTransition.classList.add("is-leaving");       window.setTimeout(() => {         revealTransition.classList.remove("is-active", "is-leaving");         transitionVideo.pause();         invitation.focus({ preventScroll: true });       }, 600);     };      transitionVideo.addEventListener("ended", revealInvitation);     transitionVideo.addEventListener("error", () => {       console.error("The invitation transition video could not be loaded.", transitionVideo.error);       revealInvitation();     });      diveButton.addEventListener("click", () => {       diveButton.disabled = true;       revealTransition.classList.add("is-active");       if (transitionVideo.readyState > 0) transitionVideo.currentTime = 0;        if (reduceMotion) {         revealInvitation();         return;       }        const playback = transitionVideo.play();       if (playback) {         playback.catch((error) => {           console.error("The invitation transition video could not be played.", error);           revealInvitation();         });       }     });      returnLink.addEventListener("click", (event) => {       event.preventDefault();       invitation.classList.add("hidden");       intro.hidden = false;       diveButton.disabled = false;       revealTransition.classList.remove("is-active", "is-leaving");       transitionVideo.pause();       if (transitionVideo.readyState > 0) transitionVideo.currentTime = 0;       window.scrollTo(0, 0);       document.querySelector("#intro-title").focus({ preventScroll: true });     });   </script>
 </body>
 </html>
