@@ -81,8 +81,6 @@
       content: "";
     }
 
-
-
     .intro[hidden] {
       display: none;
     }
@@ -93,6 +91,12 @@
       width: min(100%, 48rem);
       padding: 2rem 0 8rem;
       animation: emerge .8s .15s both;
+      transition: transform .7s cubic-bezier(.4, 0, .2, 1), opacity .6s ease;
+    }
+
+    .intro.is-diving .intro-content {
+      opacity: 0;
+      transform: translateY(-3.5rem) scale(1.06);
     }
 
     .corner-logos {
@@ -134,7 +138,22 @@
       text-shadow: 0 5px 35px #001018, 0 0 50px #071d2a80;
     }
 
-    .tentacle-initial {       display: inline-flex;       width: .62em;       height: 1.04em;       align-items: center;       justify-content: center;       margin-right: -.025em;       vertical-align: -.13em;       filter: drop-shadow(0 4px 8px #001018b0);     }      .tentacle-initial svg { display: block; width: 100%; height: 100%; overflow: visible; }     .tentacle-initial .tentacle-shape { fill: none; stroke: url("#tentacle-gradient"); stroke-linecap: round; stroke-width: 16; }     .tentacle-initial .sucker { fill: #173943; stroke: #f4d69a; stroke-width: 1.8; }      .intro h1 > span:last-child {
+    .tentacle-initial {
+      display: inline-flex;
+      width: .62em;
+      height: 1.04em;
+      align-items: center;
+      justify-content: center;
+      margin-right: -.025em;
+      vertical-align: -.13em;
+      filter: drop-shadow(0 4px 8px #001018b0);
+    }
+
+    .tentacle-initial svg { display: block; width: 100%; height: 100%; overflow: visible; }
+    .tentacle-initial .tentacle-shape { fill: none; stroke: url("#tentacle-gradient"); stroke-linecap: round; stroke-width: 16; }
+    .tentacle-initial .sucker { fill: #173943; stroke: #f4d69a; stroke-width: 1.8; }
+
+    .intro h1 > span:last-child {
       display: block;
       margin-top: 1.35rem;
       color: var(--gold);
@@ -472,13 +491,45 @@
 
     .hidden { display: none; }
 
-    .reveal-transition {       position: fixed;       z-index: 5;       inset: 0;       overflow: hidden;       visibility: hidden;       opacity: 0;       background: #04121d;       transition: opacity .6s ease, visibility 0s linear .6s;     }      .transition-video {       position: absolute;       inset: 0;       display: block;       width: 100%;       height: 100%;       object-fit: contain; background: #04121d;     }      .reveal-transition.is-active {       visibility: visible;       opacity: 1;       transition-delay: 0s;     }      .reveal-transition.is-leaving {       opacity: 0;       visibility: hidden;     }      @keyframes drift {
+    .reveal-transition {
+      position: fixed;
+      z-index: 5;
+      inset: 0;
+      overflow: hidden;
+      visibility: hidden;
+      opacity: 0;
+      background: #04121d;
+      pointer-events: none;
+      transition: opacity .55s ease, visibility 0s linear .55s;
+    }
+
+    .reveal-transition canvas {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .reveal-transition.is-active {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+      transition-delay: 0s;
+    }
+
+    .reveal-transition.is-leaving {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    @keyframes drift {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-9px); }
     }
 
     @keyframes emerge {
-      from { opacity: 0; transform: translateY(2rem) scale(.98); }
+      from { opacity: 0; transform: translateY(2.5rem) scale(.97); }
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
@@ -501,7 +552,8 @@
       .intro { padding: 1.25rem; }
       .intro-content { padding-bottom: 6rem; }
       .eyebrow { font-size: .68rem; letter-spacing: .13em; }
-      .intro h1 { font-size: clamp(2rem, 8.5vw, 2.55rem); line-height: 1.08; }       .tentacle-initial { width: .58em; height: 1em; vertical-align: -.12em; }
+      .intro h1 { font-size: clamp(2rem, 8.5vw, 2.55rem); line-height: 1.08; }
+      .tentacle-initial { width: .58em; height: 1em; vertical-align: -.12em; }
       .intro h1 > span:last-child {
         margin-top: 1.05rem;
         font-size: .76rem;
@@ -677,8 +729,165 @@
       </article>
       <p class="footer">With gratitude from the NERIST community · <a href="#intro-title">Return to the surface ↑</a></p>
     </section>
-        <div class="reveal-transition" id="reveal-transition" aria-hidden="true">       <video class="transition-video" id="transition-video" muted playsinline preload="auto">         <source src="./transition-laptop.mp4" type="video/mp4">       </video>     </div>   </main>
 
-  <script>     const diveButton = document.querySelector("#dive-button");     const intro = document.querySelector(".intro");     const invitation = document.querySelector("#invitation");     const revealTransition = document.querySelector("#reveal-transition");     const transitionVideo = document.querySelector("#transition-video");     if (window.matchMedia("(max-width: 767px)").matches) transitionVideo.src = "./transition.mp4";     const returnLink = document.querySelector('.footer a[href="#intro-title"]');     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;      const revealInvitation = () => {       if (!revealTransition.classList.contains("is-active")) return;        intro.hidden = true;       invitation.classList.remove("hidden");       window.scrollTo(0, 0);        if (reduceMotion) {         revealTransition.classList.remove("is-active");         transitionVideo.pause();         invitation.focus({ preventScroll: true });         return;       }        revealTransition.classList.add("is-leaving");       window.setTimeout(() => {         revealTransition.classList.remove("is-active", "is-leaving");         transitionVideo.pause();         invitation.focus({ preventScroll: true });       }, 600);     };      transitionVideo.addEventListener("ended", revealInvitation);     transitionVideo.addEventListener("error", () => {       console.error("The invitation transition video could not be loaded.", transitionVideo.error);       revealInvitation();     });      diveButton.addEventListener("click", () => {       diveButton.disabled = true;       revealTransition.classList.add("is-active");       if (transitionVideo.readyState > 0) transitionVideo.currentTime = 0;        if (reduceMotion) {         revealInvitation();         return;       }        const playback = transitionVideo.play();       if (playback) {         playback.catch((error) => {           console.error("The invitation transition video could not be played.", error);           revealInvitation();         });       }     });      returnLink.addEventListener("click", (event) => {       event.preventDefault();       invitation.classList.add("hidden");       intro.hidden = false;       diveButton.disabled = false;       revealTransition.classList.remove("is-active", "is-leaving");       transitionVideo.pause();       if (transitionVideo.readyState > 0) transitionVideo.currentTime = 0;       window.scrollTo(0, 0);       document.querySelector("#intro-title").focus({ preventScroll: true });     });   </script>
+    <div class="reveal-transition" id="reveal-transition" aria-hidden="true">
+      <canvas id="dive-canvas"></canvas>
+    </div>
+  </main>
+
+  <script>
+    const diveButton = document.querySelector("#dive-button");
+    const intro = document.querySelector(".intro");
+    const invitation = document.querySelector("#invitation");
+    const revealTransition = document.querySelector("#reveal-transition");
+    const diveCanvas = document.querySelector("#dive-canvas");
+    const returnLink = document.querySelector('.footer a[href="#intro-title"]');
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let animationFrameId = null;
+
+    const revealInvitation = () => {
+      if (!revealTransition.classList.contains("is-active")) return;
+
+      intro.hidden = true;
+      intro.classList.remove("is-diving");
+      invitation.classList.remove("hidden");
+      window.scrollTo(0, 0);
+
+      if (reduceMotion) {
+        revealTransition.classList.remove("is-active");
+        invitation.focus({ preventScroll: true });
+        return;
+      }
+
+      revealTransition.classList.add("is-leaving");
+      window.setTimeout(() => {
+        revealTransition.classList.remove("is-active", "is-leaving");
+        if (animationFrameId) cancelAnimationFrame(animationFrameId);
+        invitation.focus({ preventScroll: true });
+      }, 550);
+    };
+
+    function playHtmlOceanDive() {
+      const ctx = diveCanvas.getContext("2d");
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const W = window.innerWidth;
+      const H = window.innerHeight;
+
+      diveCanvas.width = W * dpr;
+      diveCanvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      const particleCount = W < 600 ? 75 : 120;
+      const particles = Array.from({ length: particleCount }, () => ({
+        x: Math.random() * W,
+        y: Math.random() * H + H * 0.3,
+        r: Math.random() * 6.5 + 1.5,
+        speed: Math.random() * 14 + 7,
+        wobble: Math.random() * Math.PI * 2,
+        drift: (Math.random() - 0.5) * 2.2,
+        isGold: Math.random() < 0.3,
+        alpha: Math.random() * 0.65 + 0.25
+      }));
+
+      const duration = 2200; // 2.2-second dive into the abyss
+      const startTime = performance.now();
+
+      function render(now) {
+        const elapsed = now - startTime;
+        const p = Math.min(elapsed / duration, 1);
+
+        // Deepening abyss ocean background (#071d2a -> #04121d)
+        const bgGrad = ctx.createLinearGradient(0, 0, 0, H);
+        bgGrad.addColorStop(0, p < 0.45 ? "#0a2a3b" : "#071d2a");
+        bgGrad.addColorStop(0.55, "#071d2a");
+        bgGrad.addColorStop(1, "#04121d");
+        ctx.fillStyle = bgGrad;
+        ctx.fillRect(0, 0, W, H);
+
+        // Volumetric underwater sunbeams fading overhead as we sink deeper
+        const rayAlpha = Math.max(0, (1 - p * 1.35) * 0.32);
+        if (rayAlpha > 0) {
+          const rayGrad = ctx.createRadialGradient(W * 0.5, -H * 0.1, 10, W * 0.5, H * 0.25, H * 0.85);
+          rayGrad.addColorStop(0, `rgba(99, 210, 194, ${rayAlpha})`);
+          rayGrad.addColorStop(0.45, `rgba(239, 200, 121, ${rayAlpha * 0.35})`);
+          rayGrad.addColorStop(1, "rgba(4, 18, 29, 0)");
+          ctx.fillStyle = rayGrad;
+          ctx.fillRect(0, 0, W, H);
+        }
+
+        // Upward rushing bubbles & golden shipwreck treasure embers
+        const velocityMultiplier = 1 + Math.sin(p * Math.PI) * 1.9;
+        particles.forEach((b) => {
+          b.y -= b.speed * velocityMultiplier;
+          b.x += Math.sin(elapsed * 0.005 + b.wobble) * b.drift;
+
+          if (b.y < -25) {
+            b.y = H + 25;
+            b.x = Math.random() * W;
+          }
+
+          ctx.beginPath();
+          ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+
+          if (b.isGold) {
+            ctx.fillStyle = `rgba(239, 200, 121, ${b.alpha})`;
+            ctx.shadowColor = "#efc879";
+            ctx.shadowBlur = 10;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+          } else {
+            ctx.fillStyle = `rgba(168, 224, 212, ${b.alpha * 0.22})`;
+            ctx.strokeStyle = `rgba(99, 210, 194, ${b.alpha})`;
+            ctx.lineWidth = 1.4;
+            ctx.fill();
+            ctx.stroke();
+          }
+        });
+
+        // Golden parchment treasure aura emerging from the deep at the end of the dive
+        if (p > 0.6) {
+          const glowP = (p - 0.6) / 0.4;
+          const treasureGlow = ctx.createRadialGradient(W * 0.5, H * 0.5, 10, W * 0.5, H * 0.5, Math.max(W, H) * 0.65);
+          treasureGlow.addColorStop(0, `rgba(239, 200, 121, ${glowP * 0.24})`);
+          treasureGlow.addColorStop(1, "rgba(4, 18, 29, 0)");
+          ctx.fillStyle = treasureGlow;
+          ctx.fillRect(0, 0, W, H);
+        }
+
+        if (p < 1) {
+          animationFrameId = requestAnimationFrame(render);
+        } else {
+          revealInvitation();
+        }
+      }
+
+      animationFrameId = requestAnimationFrame(render);
+    }
+
+    diveButton.addEventListener("click", () => {
+      diveButton.disabled = true;
+      intro.classList.add("is-diving");
+      revealTransition.classList.add("is-active");
+
+      if (reduceMotion) {
+        revealInvitation();
+        return;
+      }
+
+      playHtmlOceanDive();
+    });
+
+    returnLink.addEventListener("click", (event) => {
+      event.preventDefault();
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      invitation.classList.add("hidden");
+      intro.hidden = false;
+      intro.classList.remove("is-diving");
+      diveButton.disabled = false;
+      revealTransition.classList.remove("is-active", "is-leaving");
+      window.scrollTo(0, 0);
+      document.querySelector("#intro-title").focus({ preventScroll: true });
+    });
+  </script>
 </body>
 </html>
