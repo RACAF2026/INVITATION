@@ -91,7 +91,7 @@
       width: min(100%, 48rem);
       padding: 2rem 0 8rem;
       animation: emerge .8s .15s both;
-      transition: transform .85s cubic-bezier(.4, 0, .2, 1), opacity .7s ease, filter .7s ease;
+      transition: transform .9s cubic-bezier(.4, 0, .2, 1), opacity .75s ease, filter .75s ease;
     }
 
     .intro.is-diving .intro-content {
@@ -492,7 +492,7 @@
 
     .hidden { display: none; }
 
-    /* --- ENHANCED HTML OCEAN DIVE TRANSITION --- */
+    /* --- CLEAR & CRISP OCEAN DIVE TRANSITION --- */
     .reveal-transition {
       position: fixed;
       z-index: 5;
@@ -504,7 +504,7 @@
       opacity: 0;
       background: #04121d;
       pointer-events: none;
-      transition: opacity .65s ease, visibility 0s linear .65s;
+      transition: opacity .7s ease, visibility 0s linear .7s;
     }
 
     .reveal-transition canvas {
@@ -534,19 +534,19 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: min(90vw, 34rem);
+      width: min(92vw, 36rem);
       padding: 1.5rem;
       text-align: center;
       pointer-events: none;
     }
 
     .dive-crest {
-      width: 4.4rem;
-      height: 4.4rem;
-      margin-bottom: 1.4rem;
-      color: var(--gold);
-      filter: drop-shadow(0 0 18px #efc87966);
-      animation: spinCompass 7s linear infinite;
+      width: 4.5rem;
+      height: 4.5rem;
+      margin-bottom: 1.35rem;
+      color: #ffdf9e;
+      filter: drop-shadow(0 0 20px rgba(239, 200, 121, 0.55));
+      animation: spinCompass 8s linear infinite;
     }
 
     .dive-crest svg {
@@ -554,44 +554,44 @@
       height: 100%;
       fill: none;
       stroke: currentColor;
-      stroke-width: 1.5;
+      stroke-width: 1.6;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
     .dive-stage-kicker {
-      margin: 0 0 .65rem;
-      color: var(--teal);
-      font: 700 clamp(.66rem, 2.2vw, .78rem)/1.4 Arial, sans-serif;
-      letter-spacing: .28em;
+      margin: 0 0 .55rem;
+      color: #7ff4dc;
+      font: 700 clamp(.7rem, 2.3vw, .82rem)/1.4 Arial, sans-serif;
+      letter-spacing: .3em;
       text-transform: uppercase;
-      text-shadow: 0 2px 14px #000d14;
-      transition: opacity .35s ease, transform .35s ease;
+      text-shadow: 0 2px 16px #000, 0 0 12px rgba(99, 210, 194, 0.4);
+      transition: opacity .45s ease, transform .45s ease;
     }
 
     .dive-stage-title {
       margin: 0;
-      color: var(--ink);
+      color: #ffffff;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.5rem, 5.5vw, 2.45rem);
-      font-weight: 400;
+      font-size: clamp(1.65rem, 5.8vw, 2.65rem);
+      font-weight: 500;
       font-style: italic;
-      line-height: 1.28;
-      text-shadow: 0 4px 26px #000, 0 0 36px #efc87940;
-      transition: opacity .35s ease, transform .35s ease;
+      line-height: 1.3;
+      text-shadow: 0 4px 28px #000, 0 0 45px rgba(239, 200, 121, 0.5);
+      transition: opacity .45s ease, transform .45s ease;
     }
 
     .dive-stage-kicker.is-switching,
     .dive-stage-title.is-switching {
       opacity: 0;
-      transform: translateY(10px) scale(.97);
+      transform: translateY(12px) scale(.96);
     }
 
     .dive-divider {
-      width: min(72%, 14rem);
+      width: min(75%, 15rem);
       height: 1px;
-      margin: 1.35rem auto 1.1rem;
-      background: linear-gradient(90deg, transparent, #efc87999, transparent);
+      margin: 1.4rem auto 1.15rem;
+      background: linear-gradient(90deg, transparent, #efc879, transparent);
       position: relative;
     }
 
@@ -601,36 +601,37 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      padding: 0 .5rem;
-      color: var(--gold);
-      font-size: .75rem;
-      text-shadow: 0 0 10px #efc879;
+      padding: 0 .6rem;
+      color: #ffdf9e;
+      font-size: .8rem;
+      text-shadow: 0 0 12px #efc879;
     }
 
     .dive-depth-meter {
       display: inline-flex;
       align-items: center;
-      gap: .5rem;
-      padding: .35rem .9rem;
-      border: 1px solid #63d2c240;
+      gap: .6rem;
+      padding: .4rem 1rem;
+      border: 1px solid rgba(99, 210, 194, 0.5);
       border-radius: 999px;
-      background: #04121d99;
+      background: rgba(4, 18, 29, 0.85);
       color: #a8e0d4;
-      font: 700 .68rem/1 "Courier New", monospace;
-      letter-spacing: .2em;
+      font: 700 .72rem/1 "Courier New", monospace;
+      letter-spacing: .22em;
       text-transform: uppercase;
-      box-shadow: 0 4px 18px #0008;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
     }
 
     .dive-depth-value {
-      color: var(--gold);
-      min-width: 3.4rem;
+      color: #ffdf9e;
+      min-width: 3.6rem;
       text-align: right;
+      text-shadow: 0 0 10px rgba(239, 200, 121, 0.5);
     }
 
     @keyframes spinCompass {
       0% { transform: rotate(0deg) scale(1); }
-      50% { transform: rotate(180deg) scale(1.07); }
+      50% { transform: rotate(180deg) scale(1.06); }
       100% { transform: rotate(360deg) scale(1); }
     }
 
@@ -741,7 +742,7 @@
         transform: translateX(-50%);
       }
       .letter .corner-logos img { height: 2rem; max-width: 2.25rem; }
-      .dive-crest { width: 3.6rem; height: 3.6rem; margin-bottom: 1.1rem; }
+      .dive-crest { width: 3.7rem; height: 3.7rem; margin-bottom: 1.15rem; }
     }
 
     @media (max-width: 540px) and (max-height: 720px) {
@@ -854,13 +855,12 @@
       <canvas id="dive-canvas"></canvas>
       <div class="dive-overlay">
         <div class="dive-crest">
-          <!-- Golden Nautical Compass Rose -->
           <svg viewBox="0 0 64 64">
             <circle cx="32" cy="32" r="26" stroke-opacity="0.45" stroke-dasharray="3 3"></circle>
-            <circle cx="32" cy="32" r="20" stroke-opacity="0.7"></circle>
-            <path d="M32 4 L36.5 27.5 L60 32 L36.5 36.5 L32 60 L27.5 36.5 L4 32 L27.5 27.5 Z" fill="rgba(239, 200, 121, 0.16)"></path>
-            <path d="M16 16 L29 29 M48 16 L35 29 M48 48 L35 35 M16 48 L29 35" stroke-opacity="0.6"></path>
-            <circle cx="32" cy="32" r="3" fill="#efc879"></circle>
+            <circle cx="32" cy="32" r="20" stroke-opacity="0.75"></circle>
+            <path d="M32 4 L36.5 27.5 L60 32 L36.5 36.5 L32 60 L27.5 36.5 L4 32 L27.5 27.5 Z" fill="rgba(239, 200, 121, 0.22)"></path>
+            <path d="M16 16 L29 29 M48 16 L35 29 M48 48 L35 35 M16 48 L29 35" stroke-opacity="0.65"></path>
+            <circle cx="32" cy="32" r="3.2" fill="#ffdf9e"></circle>
           </svg>
         </div>
         <p class="dive-stage-kicker" id="dive-kicker">Descending Beneath the Waves</p>
@@ -894,11 +894,11 @@
       },
       {
         kicker: "Into the Sunken Archives",
-        title: "Where the legacy of the lost shipwreck rests..."
+        title: "Where legends of the lost shipwreck rest..."
       },
       {
         kicker: "Sonabyss 2026 · NERIST",
-        title: "Unsealing a distinguished invitation..."
+        title: "Unsealing your distinguished invitation..."
       }
     ];
 
@@ -916,7 +916,7 @@
         diveTitle.textContent = diveStages[stageIndex].title;
         diveKicker.classList.remove("is-switching");
         diveTitle.classList.remove("is-switching");
-      }, 180);
+      }, 200);
     }
 
     const revealInvitation = () => {
@@ -938,7 +938,7 @@
         revealTransition.classList.remove("is-active", "is-leaving");
         if (animationFrameId) cancelAnimationFrame(animationFrameId);
         invitation.focus({ preventScroll: true });
-      }, 650);
+      }, 700);
     };
 
     function playHtmlOceanDive() {
@@ -951,7 +951,6 @@
       diveCanvas.height = H * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      // Reset stage text & depth
       activeStageIndex = 0;
       diveKicker.textContent = diveStages[0].kicker;
       diveTitle.textContent = diveStages[0].title;
@@ -959,7 +958,6 @@
       diveTitle.classList.remove("is-switching");
       diveDepth.textContent = "0m";
 
-      // Slanted underwater light shafts
       const lightRays = Array.from({ length: 5 }, (_, i) => ({
         x: (W * (i + 0.5)) / 5,
         width: W * 0.14 + Math.random() * 40,
@@ -967,61 +965,56 @@
         phase: Math.random() * Math.PI * 2
       }));
 
-      // 3D layered bubbles + golden shipwreck treasure sparks
-      const particleCount = W < 600 ? 90 : 140;
+      const particleCount = W < 600 ? 80 : 130;
       const particles = Array.from({ length: particleCount }, () => {
-        const isGold = Math.random() < 0.34;
+        const isGold = Math.random() < 0.35;
         return {
           x: Math.random() * W,
           y: Math.random() * H + H * 0.2,
-          r: isGold ? Math.random() * 3.2 + 1.2 : Math.random() * 8.5 + 1.8,
-          speed: Math.random() * 14 + 6.5,
+          r: isGold ? Math.random() * 3.5 + 1.5 : Math.random() * 9 + 2,
+          speed: Math.random() * 10 + 4.5, // Slower, calmer rise speed
           wobble: Math.random() * Math.PI * 2,
-          drift: (Math.random() - 0.5) * 2.4,
+          drift: (Math.random() - 0.5) * 2,
           isGold,
-          alpha: Math.random() * 0.65 + 0.25
+          alpha: Math.random() * 0.65 + 0.3
         };
       });
 
-      const duration = 3500; // 3.5-second scenic ocean dive
+      const duration = 4200; // Slower, relaxed 4.2-second scenic dive
       const startTime = performance.now();
 
       function render(now) {
         const elapsed = now - startTime;
         const p = Math.min(elapsed / duration, 1);
 
-        // Update narrative text across 3 stages
-        if (p < 0.36) {
+        if (p < 0.38) {
           updateStageText(0);
-        } else if (p < 0.72) {
+        } else if (p < 0.75) {
           updateStageText(1);
         } else {
           updateStageText(2);
         }
 
-        // Update live depth meter (0m -> 420m)
-        const currentDepth = Math.round(Math.pow(p, 1.15) * 420);
+        const currentDepth = Math.round(Math.pow(p, 1.2) * 450);
         diveDepth.textContent = `${currentDepth}m`;
 
-        // Deepening abyss ocean background (#0a2d3e -> #071d2a -> #04121d)
         const bgGrad = ctx.createLinearGradient(0, 0, 0, H);
-        bgGrad.addColorStop(0, p < 0.4 ? "#0b3144" : "#071d2a");
+        bgGrad.addColorStop(0, p < 0.4 ? "#0b3348" : "#071d2a");
         bgGrad.addColorStop(0.55, "#061924");
-        bgGrad.addColorStop(1, "#030e17");
+        bgGrad.addColorStop(1, "#030b13");
         ctx.fillStyle = bgGrad;
         ctx.fillRect(0, 0, W, H);
 
-        // Swaying volumetric god rays from the surface (fade as depth increases)
-        const rayOpacity = Math.max(0, (1 - p * 1.25) * 0.22);
+        const rayOpacity = Math.max(0, (1 - p * 1.2) * 0.24);
         if (rayOpacity > 0) {
           lightRays.forEach((ray) => {
             ctx.save();
-            const swayX = ray.x + Math.sin(elapsed * 0.0018 + ray.phase) * 30;
+            const swayX = ray.x + Math.sin(elapsed * 0.0015 + ray.phase) * 25;
             ctx.translate(swayX, -20);
             ctx.rotate(ray.angle);
             const rGrad = ctx.createLinearGradient(0, 0, 0, H * 0.85);
             rGrad.addColorStop(0, `rgba(99, 210, 194, ${rayOpacity})`);
-            rGrad.addColorStop(0.5, `rgba(239, 200, 121, ${rayOpacity * 0.35})`);
+            rGrad.addColorStop(0.5, `rgba(239, 200, 121, ${rayOpacity * 0.4})`);
             rGrad.addColorStop(1, "rgba(4, 18, 29, 0)");
             ctx.fillStyle = rGrad;
             ctx.beginPath();
@@ -1035,11 +1028,10 @@
           });
         }
 
-        // Upward rushing bubbles & golden shipwreck treasure embers
-        const velocityBoost = 1 + Math.sin(p * Math.PI) * 1.85;
+        const velocityBoost = 1 + Math.sin(p * Math.PI) * 1.5;
         particles.forEach((b) => {
           b.y -= b.speed * velocityBoost;
-          b.x += Math.sin(elapsed * 0.0045 + b.wobble) * b.drift;
+          b.x += Math.sin(elapsed * 0.004 + b.wobble) * b.drift;
 
           if (b.y < -30) {
             b.y = H + 30;
@@ -1050,32 +1042,30 @@
           ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
 
           if (b.isGold) {
-            const twinkle = 0.65 + 0.35 * Math.sin(elapsed * 0.01 + b.wobble);
+            const twinkle = 0.7 + 0.3 * Math.sin(elapsed * 0.008 + b.wobble);
             ctx.fillStyle = `rgba(239, 200, 121, ${b.alpha * twinkle})`;
             ctx.shadowColor = "#efc879";
-            ctx.shadowBlur = 12;
+            ctx.shadowBlur = 14;
             ctx.fill();
             ctx.shadowBlur = 0;
           } else {
-            ctx.fillStyle = `rgba(168, 224, 212, ${b.alpha * 0.18})`;
-            ctx.strokeStyle = `rgba(99, 210, 194, ${b.alpha * 0.85})`;
-            ctx.lineWidth = 1.3;
+            ctx.fillStyle = `rgba(168, 224, 212, ${b.alpha * 0.2})`;
+            ctx.strokeStyle = `rgba(99, 210, 194, ${b.alpha})`;
+            ctx.lineWidth = 1.4;
             ctx.fill();
             ctx.stroke();
 
-            // Specular highlight on larger bubbles
-            if (b.r > 4) {
+            if (b.r > 4.5) {
               ctx.beginPath();
               ctx.arc(b.x - b.r * 0.32, b.y - b.r * 0.32, b.r * 0.22, 0, Math.PI * 2);
-              ctx.fillStyle = `rgba(255, 255, 255, ${b.alpha * 0.65})`;
+              ctx.fillStyle = `rgba(255, 255, 255, ${b.alpha * 0.75})`;
               ctx.fill();
             }
           }
         });
 
-        // Warm golden parchment aura rising from the abyss at the end of the dive
-        if (p > 0.62) {
-          const glowP = (p - 0.62) / 0.38;
+        if (p > 0.58) {
+          const glowP = (p - 0.58) / 0.42;
           const treasureGlow = ctx.createRadialGradient(
             W * 0.5,
             H * 0.5,
@@ -1084,8 +1074,8 @@
             H * 0.5,
             Math.max(W, H) * 0.65
           );
-          treasureGlow.addColorStop(0, `rgba(239, 200, 121, ${glowP * 0.32})`);
-          treasureGlow.addColorStop(0.5, `rgba(99, 210, 194, ${glowP * 0.1})`);
+          treasureGlow.addColorStop(0, `rgba(239, 200, 121, ${glowP * 0.35})`);
+          treasureGlow.addColorStop(0.5, `rgba(99, 210, 194, ${glowP * 0.12})`);
           treasureGlow.addColorStop(1, "rgba(4, 18, 29, 0)");
           ctx.fillStyle = treasureGlow;
           ctx.fillRect(0, 0, W, H);
