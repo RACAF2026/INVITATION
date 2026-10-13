@@ -492,11 +492,14 @@
 
     .hidden { display: none; }
 
-    /* --- CLEAR & CRISP OCEAN DIVE TRANSITION --- */
+    /* --- REFINED MOBILE & LAPTOP OCEAN DIVE TRANSITION --- */
     .reveal-transition {
       position: fixed;
       z-index: 5;
       inset: 0;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
       display: grid;
       place-items: center;
       overflow: hidden;
@@ -504,7 +507,7 @@
       opacity: 0;
       background: #04121d;
       pointer-events: none;
-      transition: opacity .7s ease, visibility 0s linear .7s;
+      transition: opacity .75s cubic-bezier(.22, 1, .36, 1), visibility 0s linear .75s;
     }
 
     .reveal-transition canvas {
@@ -534,19 +537,21 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: min(92vw, 36rem);
-      padding: 1.5rem;
+      width: min(92vw, 40rem);
+      padding: clamp(1.5rem, 4vw, 2.75rem) clamp(1.25rem, 4vw, 2.5rem);
+      border-radius: 1.5rem;
+      background: radial-gradient(ellipse at center, rgba(4, 18, 29, 0.76) 0%, rgba(4, 18, 29, 0.38) 60%, transparent 82%);
       text-align: center;
       pointer-events: none;
     }
 
     .dive-crest {
-      width: 4.5rem;
-      height: 4.5rem;
-      margin-bottom: 1.35rem;
+      width: clamp(3.6rem, 8vw, 4.75rem);
+      height: clamp(3.6rem, 8vw, 4.75rem);
+      margin-bottom: clamp(1rem, 2.5vh, 1.5rem);
       color: #ffdf9e;
-      filter: drop-shadow(0 0 20px rgba(239, 200, 121, 0.55));
-      animation: spinCompass 8s linear infinite;
+      filter: drop-shadow(0 0 18px rgba(239, 200, 121, 0.6));
+      animation: spinCompass 9s linear infinite;
     }
 
     .dive-crest svg {
@@ -560,38 +565,46 @@
     }
 
     .dive-stage-kicker {
-      margin: 0 0 .55rem;
-      color: #7ff4dc;
-      font: 700 clamp(.7rem, 2.3vw, .82rem)/1.4 Arial, sans-serif;
-      letter-spacing: .3em;
+      margin: 0 0 .65rem;
+      color: #8bf7e3;
+      font: 700 clamp(.68rem, 1.8vw, .84rem)/1.45 "Segoe UI", Arial, sans-serif;
+      letter-spacing: clamp(.18em, 0.8vw, .32em);
       text-transform: uppercase;
-      text-shadow: 0 2px 16px #000, 0 0 12px rgba(99, 210, 194, 0.4);
-      transition: opacity .45s ease, transform .45s ease;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95), 0 0 16px rgba(99, 210, 194, 0.45);
+      transition: opacity .28s cubic-bezier(.4, 0, .2, 1), transform .28s cubic-bezier(.4, 0, .2, 1);
+      will-change: opacity, transform;
     }
 
     .dive-stage-title {
+      min-height: 2.6em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin: 0;
-      color: #ffffff;
+      color: #fffdf7;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.65rem, 5.8vw, 2.65rem);
+      font-size: clamp(1.45rem, 4.6vw, 2.55rem);
       font-weight: 500;
       font-style: italic;
-      line-height: 1.3;
-      text-shadow: 0 4px 28px #000, 0 0 45px rgba(239, 200, 121, 0.5);
-      transition: opacity .45s ease, transform .45s ease;
+      line-height: 1.32;
+      letter-spacing: .01em;
+      text-wrap: balance;
+      text-shadow: 0 3px 18px rgba(0, 0, 0, 0.95), 0 0 38px rgba(239, 200, 121, 0.45);
+      transition: opacity .28s cubic-bezier(.4, 0, .2, 1), transform .28s cubic-bezier(.4, 0, .2, 1);
+      will-change: opacity, transform;
     }
 
     .dive-stage-kicker.is-switching,
     .dive-stage-title.is-switching {
       opacity: 0;
-      transform: translateY(12px) scale(.96);
+      transform: translateY(10px) scale(.97);
     }
 
     .dive-divider {
-      width: min(75%, 15rem);
+      width: min(78%, 16rem);
       height: 1px;
-      margin: 1.4rem auto 1.15rem;
-      background: linear-gradient(90deg, transparent, #efc879, transparent);
+      margin: clamp(1.1rem, 2.5vh, 1.5rem) auto clamp(.95rem, 2vh, 1.25rem);
+      background: linear-gradient(90deg, transparent, rgba(239, 200, 121, 0.85), transparent);
       position: relative;
     }
 
@@ -603,30 +616,56 @@
       transform: translate(-50%, -50%);
       padding: 0 .6rem;
       color: #ffdf9e;
-      font-size: .8rem;
+      font-size: .82rem;
       text-shadow: 0 0 12px #efc879;
+    }
+
+    .dive-telemetry {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .65rem;
+      width: min(82%, 15rem);
     }
 
     .dive-depth-meter {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: .6rem;
-      padding: .4rem 1rem;
+      padding: .42rem 1.05rem;
       border: 1px solid rgba(99, 210, 194, 0.5);
       border-radius: 999px;
-      background: rgba(4, 18, 29, 0.85);
-      color: #a8e0d4;
-      font: 700 .72rem/1 "Courier New", monospace;
+      background: rgba(4, 18, 29, 0.88);
+      color: #b5ebe0;
+      font: 700 clamp(.66rem, 1.6vw, .74rem)/1 "Courier New", monospace;
       letter-spacing: .22em;
       text-transform: uppercase;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.75), inset 0 0 12px rgba(99, 210, 194, 0.1);
     }
 
     .dive-depth-value {
       color: #ffdf9e;
-      min-width: 3.6rem;
+      min-width: 3.7rem;
       text-align: right;
-      text-shadow: 0 0 10px rgba(239, 200, 121, 0.5);
+      text-shadow: 0 0 10px rgba(239, 200, 121, 0.55);
+    }
+
+    .dive-progress-track {
+      width: 100%;
+      height: 3px;
+      border-radius: 999px;
+      background: rgba(99, 210, 194, 0.16);
+      overflow: hidden;
+    }
+
+    .dive-progress-bar {
+      width: 0%;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #63d2c2, #efc879);
+      box-shadow: 0 0 10px rgba(239, 200, 121, 0.7);
+      transition: width .08s linear;
     }
 
     @keyframes spinCompass {
@@ -643,7 +682,7 @@
     @keyframes parchmentUnfold {
       from {
         opacity: 0;
-        transform: perspective(1000px) rotateX(16deg) translateY(3.5rem) scale(.94);
+        transform: perspective(1000px) rotateX(14deg) translateY(3rem) scale(.95);
         filter: drop-shadow(0 0 35px #efc87938);
       }
       to {
@@ -742,7 +781,13 @@
         transform: translateX(-50%);
       }
       .letter .corner-logos img { height: 2rem; max-width: 2.25rem; }
-      .dive-crest { width: 3.7rem; height: 3.7rem; margin-bottom: 1.15rem; }
+      .dive-overlay {
+        width: 94vw;
+        padding: 1.35rem 1rem;
+      }
+      .dive-stage-title {
+        min-height: 2.8em;
+      }
     }
 
     @media (max-width: 540px) and (max-height: 720px) {
@@ -811,7 +856,7 @@
           <p>
             As a valued alumnus of our institution, your journey and accomplishments
             continue to inspire our community. We would be honoured if you would join
-            us as our <strong>Chief Guest</strong> and share this special occasion
+            us as our <strong>Special Invitee</strong> and share this special occasion
             with students, faculty, alumni, and guests.
           </p>
           <p>
@@ -866,9 +911,14 @@
         <p class="dive-stage-kicker" id="dive-kicker">Descending Beneath the Waves</p>
         <p class="dive-stage-title" id="dive-title">Leaving the sunlit surface behind...</p>
         <div class="dive-divider"></div>
-        <div class="dive-depth-meter">
-          <span>Depth</span>
-          <span class="dive-depth-value" id="dive-depth">0m</span>
+        <div class="dive-telemetry">
+          <div class="dive-depth-meter">
+            <span>Depth</span>
+            <span class="dive-depth-value" id="dive-depth">0m</span>
+          </div>
+          <div class="dive-progress-track">
+            <div class="dive-progress-bar" id="dive-progress"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -883,9 +933,11 @@
     const diveKicker = document.querySelector("#dive-kicker");
     const diveTitle = document.querySelector("#dive-title");
     const diveDepth = document.querySelector("#dive-depth");
+    const diveProgress = document.querySelector("#dive-progress");
     const returnLink = document.querySelector('.footer a[href="#intro-title"]');
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let animationFrameId = null;
+    let stageSwitchTimeout = null;
 
     const diveStages = [
       {
@@ -911,12 +963,13 @@
       diveKicker.classList.add("is-switching");
       diveTitle.classList.add("is-switching");
 
-      window.setTimeout(() => {
+      if (stageSwitchTimeout) clearTimeout(stageSwitchTimeout);
+      stageSwitchTimeout = window.setTimeout(() => {
         diveKicker.textContent = diveStages[stageIndex].kicker;
         diveTitle.textContent = diveStages[stageIndex].title;
         diveKicker.classList.remove("is-switching");
         diveTitle.classList.remove("is-switching");
-      }, 200);
+      }, 270);
     }
 
     const revealInvitation = () => {
@@ -938,18 +991,27 @@
         revealTransition.classList.remove("is-active", "is-leaving");
         if (animationFrameId) cancelAnimationFrame(animationFrameId);
         invitation.focus({ preventScroll: true });
-      }, 700);
+      }, 750);
     };
 
     function playHtmlOceanDive() {
       const ctx = diveCanvas.getContext("2d");
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      const W = window.innerWidth;
-      const H = window.innerHeight;
+      let W = window.innerWidth;
+      let H = window.innerHeight;
+      let isMobileScreen = W < 640;
 
-      diveCanvas.width = W * dpr;
-      diveCanvas.height = H * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      function sizeCanvas() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        W = window.innerWidth;
+        H = window.innerHeight;
+        isMobileScreen = W < 640;
+        diveCanvas.width = W * dpr;
+        diveCanvas.height = H * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
+      sizeCanvas();
+      window.addEventListener("resize", sizeCanvas, { passive: true });
 
       activeStageIndex = 0;
       diveKicker.textContent = diveStages[0].kicker;
@@ -957,115 +1019,132 @@
       diveKicker.classList.remove("is-switching");
       diveTitle.classList.remove("is-switching");
       diveDepth.textContent = "0m";
+      diveProgress.style.width = "0%";
 
-      const lightRays = Array.from({ length: 5 }, (_, i) => ({
-        x: (W * (i + 0.5)) / 5,
-        width: W * 0.14 + Math.random() * 40,
-        angle: (Math.random() - 0.5) * 0.22,
+      const rayCount = isMobileScreen ? 4 : 6;
+      const lightRays = Array.from({ length: rayCount }, (_, i) => ({
+        xRatio: (i + 0.5) / rayCount,
+        widthRatio: isMobileScreen ? 0.22 : 0.13,
+        angle: (Math.random() - 0.5) * 0.18,
         phase: Math.random() * Math.PI * 2
       }));
 
-      const particleCount = W < 600 ? 80 : 130;
+      const particleCount = isMobileScreen ? 68 : 120;
       const particles = Array.from({ length: particleCount }, () => {
-        const isGold = Math.random() < 0.35;
+        const isGold = Math.random() < 0.36;
         return {
           x: Math.random() * W,
-          y: Math.random() * H + H * 0.2,
-          r: isGold ? Math.random() * 3.5 + 1.5 : Math.random() * 9 + 2,
-          speed: Math.random() * 10 + 4.5, // Slower, calmer rise speed
+          y: Math.random() * H + H * 0.15,
+          r: isGold
+            ? Math.random() * (isMobileScreen ? 2.6 : 3.4) + 1.3
+            : Math.random() * (isMobileScreen ? 6.5 : 8.5) + 2,
+          speed: Math.random() * 6.5 + 3.2,
           wobble: Math.random() * Math.PI * 2,
-          drift: (Math.random() - 0.5) * 2,
+          drift: (Math.random() - 0.5) * 1.6,
           isGold,
-          alpha: Math.random() * 0.65 + 0.3
+          alpha: Math.random() * 0.6 + 0.32
         };
       });
 
-      const duration = 4200; // Slower, relaxed 4.2-second scenic dive
+      const duration = 4800; // Smooth 4.8-second dive across mobile and laptop
       const startTime = performance.now();
+      let lastTime = startTime;
 
       function render(now) {
         const elapsed = now - startTime;
+        const dt = Math.min(now - lastTime, 50);
+        lastTime = now;
+        const timeScale = dt / 16.667;
+
         const p = Math.min(elapsed / duration, 1);
 
-        if (p < 0.38) {
+        if (p < 0.35) {
           updateStageText(0);
-        } else if (p < 0.75) {
+        } else if (p < 0.70) {
           updateStageText(1);
         } else {
           updateStageText(2);
         }
 
-        const currentDepth = Math.round(Math.pow(p, 1.2) * 450);
+        const currentDepth = Math.round(Math.pow(p, 1.15) * 450);
         diveDepth.textContent = `${currentDepth}m`;
+        diveProgress.style.width = `${(p * 100).toFixed(1)}%`;
 
         const bgGrad = ctx.createLinearGradient(0, 0, 0, H);
-        bgGrad.addColorStop(0, p < 0.4 ? "#0b3348" : "#071d2a");
+        bgGrad.addColorStop(0, p < 0.38 ? "#0b3348" : "#071d2a");
         bgGrad.addColorStop(0.55, "#061924");
         bgGrad.addColorStop(1, "#030b13");
         ctx.fillStyle = bgGrad;
         ctx.fillRect(0, 0, W, H);
 
-        const rayOpacity = Math.max(0, (1 - p * 1.2) * 0.24);
+        const rayOpacity = Math.max(0, (1 - p * 1.18) * 0.22);
         if (rayOpacity > 0) {
           lightRays.forEach((ray) => {
             ctx.save();
-            const swayX = ray.x + Math.sin(elapsed * 0.0015 + ray.phase) * 25;
+            const baseX = ray.xRatio * W;
+            const rayW = ray.widthRatio * W;
+            const swayX = baseX + Math.sin(elapsed * 0.0013 + ray.phase) * (isMobileScreen ? 16 : 28);
             ctx.translate(swayX, -20);
             ctx.rotate(ray.angle);
-            const rGrad = ctx.createLinearGradient(0, 0, 0, H * 0.85);
+            const rGrad = ctx.createLinearGradient(0, 0, 0, H * 0.88);
             rGrad.addColorStop(0, `rgba(99, 210, 194, ${rayOpacity})`);
-            rGrad.addColorStop(0.5, `rgba(239, 200, 121, ${rayOpacity * 0.4})`);
+            rGrad.addColorStop(0.5, `rgba(239, 200, 121, ${rayOpacity * 0.38})`);
             rGrad.addColorStop(1, "rgba(4, 18, 29, 0)");
             ctx.fillStyle = rGrad;
             ctx.beginPath();
-            ctx.moveTo(-ray.width * 0.35, 0);
-            ctx.lineTo(ray.width * 0.35, 0);
-            ctx.lineTo(ray.width * 0.85, H * 0.85);
-            ctx.lineTo(-ray.width * 0.85, H * 0.85);
+            ctx.moveTo(-rayW * 0.35, 0);
+            ctx.lineTo(rayW * 0.35, 0);
+            ctx.lineTo(rayW * 0.85, H * 0.88);
+            ctx.lineTo(-rayW * 0.85, H * 0.88);
             ctx.closePath();
             ctx.fill();
             ctx.restore();
           });
         }
 
-        const velocityBoost = 1 + Math.sin(p * Math.PI) * 1.5;
+        const velocityBoost = 1 + Math.sin(p * Math.PI) * 1.15;
         particles.forEach((b) => {
-          b.y -= b.speed * velocityBoost;
-          b.x += Math.sin(elapsed * 0.004 + b.wobble) * b.drift;
+          b.y -= b.speed * velocityBoost * timeScale;
+          b.x += Math.sin(elapsed * 0.0035 + b.wobble) * b.drift * timeScale;
 
           if (b.y < -30) {
             b.y = H + 30;
             b.x = Math.random() * W;
           }
 
-          ctx.beginPath();
-          ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
-
           if (b.isGold) {
-            const twinkle = 0.7 + 0.3 * Math.sin(elapsed * 0.008 + b.wobble);
-            ctx.fillStyle = `rgba(239, 200, 121, ${b.alpha * twinkle})`;
-            ctx.shadowColor = "#efc879";
-            ctx.shadowBlur = 14;
+            const twinkle = 0.68 + 0.32 * Math.sin(elapsed * 0.007 + b.wobble);
+            const goldAlpha = b.alpha * twinkle;
+
+            ctx.beginPath();
+            ctx.arc(b.x, b.y, b.r * 2.6, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(239, 200, 121, ${goldAlpha * 0.22})`;
             ctx.fill();
-            ctx.shadowBlur = 0;
+
+            ctx.beginPath();
+            ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 223, 158, ${goldAlpha})`;
+            ctx.fill();
           } else {
-            ctx.fillStyle = `rgba(168, 224, 212, ${b.alpha * 0.2})`;
-            ctx.strokeStyle = `rgba(99, 210, 194, ${b.alpha})`;
-            ctx.lineWidth = 1.4;
+            ctx.beginPath();
+            ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(168, 224, 212, ${b.alpha * 0.18})`;
+            ctx.strokeStyle = `rgba(99, 210, 194, ${b.alpha * 0.9})`;
+            ctx.lineWidth = 1.3;
             ctx.fill();
             ctx.stroke();
 
-            if (b.r > 4.5) {
+            if (b.r > 4) {
               ctx.beginPath();
               ctx.arc(b.x - b.r * 0.32, b.y - b.r * 0.32, b.r * 0.22, 0, Math.PI * 2);
-              ctx.fillStyle = `rgba(255, 255, 255, ${b.alpha * 0.75})`;
+              ctx.fillStyle = `rgba(255, 255, 255, ${b.alpha * 0.72})`;
               ctx.fill();
             }
           }
         });
 
-        if (p > 0.58) {
-          const glowP = (p - 0.58) / 0.42;
+        if (p > 0.6) {
+          const glowP = (p - 0.6) / 0.4;
           const treasureGlow = ctx.createRadialGradient(
             W * 0.5,
             H * 0.5,
@@ -1074,7 +1153,7 @@
             H * 0.5,
             Math.max(W, H) * 0.65
           );
-          treasureGlow.addColorStop(0, `rgba(239, 200, 121, ${glowP * 0.35})`);
+          treasureGlow.addColorStop(0, `rgba(239, 200, 121, ${glowP * 0.34})`);
           treasureGlow.addColorStop(0.5, `rgba(99, 210, 194, ${glowP * 0.12})`);
           treasureGlow.addColorStop(1, "rgba(4, 18, 29, 0)");
           ctx.fillStyle = treasureGlow;
@@ -1084,6 +1163,7 @@
         if (p < 1) {
           animationFrameId = requestAnimationFrame(render);
         } else {
+          window.removeEventListener("resize", sizeCanvas);
           revealInvitation();
         }
       }
@@ -1107,6 +1187,7 @@
     returnLink.addEventListener("click", (event) => {
       event.preventDefault();
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      if (stageSwitchTimeout) clearTimeout(stageSwitchTimeout);
       invitation.classList.add("hidden");
       intro.hidden = false;
       intro.classList.remove("is-diving");
