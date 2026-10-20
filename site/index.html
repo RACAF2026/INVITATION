@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#071d2a">
-  <meta name="description" content="A Sonabyss 2026 invitation for Mr. Sonkoli Sonam, from the organising committee.">
+  <meta name="description" content="An official invitation to Sonabyss 2026 from the Organising Committee, NERIST.">
   <meta property="og:title" content="A Message from the RACAF Team | SONABYSS 2026">
-  <meta property="og:description" content="A Sonabyss 2026 invitation for Mr. Sonkoli Sonam, from the organising committee.">
+  <meta property="og:description" content="An official invitation to Sonabyss 2026 from the Organising Committee, NERIST.">
   <meta property="og:type" content="website">
   <title>A Message from the RACAF Team | SONABYSS 2026</title>
   <style>
@@ -846,17 +846,17 @@
         <div class="letter-rule" aria-hidden="true"></div>
 
         <div class="letter-body">
-          <p class="salutation">Respected Sir,</p>
-          <p class="recipient">Mr. Sonkoli Sonam<span>Executive Engineer, Smart City Itanagar</span></p>
+          <p class="salutation" id="guest-salutation">Respected Sir,</p>
+          <p class="recipient"><span id="guest-name" style="display:inline;color:inherit;font:inherit;">Mr. Sonkoli Sonam</span><span id="guest-post">Executive Engineer, Smart City Itanagar</span></p>
 
           <p>
             On behalf of the organising committee of NERIST, it is our great pleasure
             to invite you to Sonabyss 2026, our upcoming event.
           </p>
-          <p>
+          <p id="guest-role-paragraph">
             As a valued alumnus of our institution, your journey and accomplishments
             continue to inspire our community. We would be honoured if you would join
-            us as our <strong>Special Invitee</strong> and share this special occasion
+            us as our <strong id="guest-role">Special Invitee</strong> and share this special occasion
             with students, faculty, alumni, and guests.
           </p>
           <p>
@@ -873,8 +873,8 @@
                   <path d="M7.5 3.5v4M16.5 3.5v4M3.5 10h17M8 14h2M14 14h2M8 17h2"></path>
                 </svg>
               </span>
-              <span class="detail-label">Date</span>
-              <span class="detail-value">4 November</span>
+              <span class="detail-label" id="guest-date-label">Date</span>
+              <span class="detail-value" id="guest-date">4 November</span>
             </div>
             <div>
               <span class="detail-icon" aria-hidden="true">
@@ -888,7 +888,7 @@
             </div>
           </div>
 
-          <p>We look forward to welcoming you back to NERIST.</p>
+          <p id="guest-closing">We look forward to welcoming you back to NERIST.</p>
           <p class="signoff">With warm regards,<strong>Organising Committee</strong><strong>Sonabyss 2026 · NERIST</strong></p>
           <div class="letter-footer-ornament" aria-hidden="true">✧ ✧</div>
         </div>
@@ -925,6 +925,268 @@
   </main>
 
   <script>
+    // =========================================================================
+    // METHOD 1: PRESET GUEST LIST (ALL 22 SPREADSHEET GUESTS + DEFAULT)
+    // =========================================================================
+    const GUEST_LIST = {
+      sonkoli: {
+        salutation: "Respected Sir,",
+        name: "Mr. Sonkoli Sonam",
+        post: "Executive Engineer, Smart City Itanagar",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "1": {
+        salutation: "Respected Sir,",
+        name: "Er. Gyati Nako",
+        post: "Assistant Engineer, PWD, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "2": {
+        salutation: "Respected Sir,",
+        name: "Er. Likha Taha",
+        post: "Junior Engineer, PWD, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "3": {
+        salutation: "Respected Ma'am,",
+        name: "Er. Pem Yangchin",
+        post: "Junior Engineer, PWD, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "4": {
+        salutation: "Respected Sir,",
+        name: "Er. Tajay Marbom",
+        post: "Junior Engineer, WRD, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "5": {
+        salutation: "Respected Sir,",
+        name: "Er. Rubu Dinsung",
+        post: "Junior Engineer, WRD, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "6": {
+        salutation: "Respected Sir,",
+        name: "Er. Kendar Ete",
+        post: "Junior Engineer, WRD, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "7": {
+        salutation: "Respected Sir,",
+        name: "Er. Toko Sith",
+        post: "Junior Engineer, WRD, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "8": {
+        salutation: "Respected Sir,",
+        name: "Er. Oje Kamra",
+        post: "Junior Engineer, WRD, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "9": {
+        salutation: "Respected Sir,",
+        name: "Er. Nani Nobin",
+        post: "Junior Engineer, WRD, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "10": {
+        salutation: "Respected Sir,",
+        name: "Er. Maru Talu",
+        post: "Junior Engineer, WRD, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "11": {
+        salutation: "Respected Sir,",
+        name: "Er. Subu Konia",
+        post: "Junior Engineer, WRD, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "12": {
+        salutation: "Respected Sir,",
+        name: "Er. Nending Nomo",
+        post: "Junior Engineer, WRD, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "13": {
+        salutation: "Respected Ma'am,",
+        name: "Er. Michi Rimin",
+        post: "Junior Engineer, WRD, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "14": {
+        salutation: "Respected Sir,",
+        name: "Er. Abindo Tayeng",
+        post: "Junior Engineer, WRD, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "15": {
+        salutation: "Respected Sir,",
+        name: "Er. Marbom Nguki",
+        post: "Junior Engineer, PHE & WS, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "16": {
+        salutation: "Respected Sir,",
+        name: "Er. Tasso Dogin",
+        post: "Junior Engineer, DoHP, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "17": {
+        salutation: "Respected Ma'am,",
+        name: "Er. Ipi Gamlin",
+        post: "Junior Engineer, DoHP, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "18": {
+        salutation: "Respected Ma'am,",
+        name: "Er. Deji Mara",
+        post: "Junior Engineer, DoHP, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "19": {
+        salutation: "Respected Ma'am,",
+        name: "Er. Gyati Mamung",
+        post: "Junior Engineer, DoP, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "20": {
+        salutation: "Respected Sir,",
+        name: "Er. Kamin Tali",
+        post: "Junior Engineer, DoP, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "21": {
+        salutation: "Respected Sir,",
+        name: "Er. Ogam Peyang",
+        post: "Junior Engineer, DoP, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      },
+      "22": {
+        salutation: "Respected Sir,",
+        name: "Er. Tamo Taping",
+        post: "Junior Engineer, DoP, Arunachal Pradesh",
+        role: "Special Invitee",
+        type: "alumnus",
+        date: "4 November"
+      }
+    };
+
+    // Map hyphenated name slugs (e.g., ?guest=gyati-nako) to the same entries
+    const SLUG_MAP = {
+      "sonkoli-sonam": "sonkoli",
+      "gyati-nako": "1",
+      "likha-taha": "2",
+      "pem-yangchin": "3",
+      "tajay-marbom": "4",
+      "rubu-dinsung": "5",
+      "kendar-ete": "6",
+      "toko-sith": "7",
+      "oje-kamra": "8",
+      "nani-nobin": "9",
+      "maru-talu": "10",
+      "subu-konia": "11",
+      "nending-nomo": "12",
+      "michi-rimin": "13",
+      "abindo-tayeng": "14",
+      "marbom-nguki": "15",
+      "tasso-dogin": "16",
+      "ipi-gamlin": "17",
+      "deji-mara": "18",
+      "gyati-mamung": "19",
+      "kamin-tali": "20",
+      "ogam-peyang": "21",
+      "tamo-taping": "22"
+    };
+
+    function applyGuestFromList() {
+      const params = new URLSearchParams(window.location.search);
+      const rawKey = (params.get("guest") || params.get("g") || "sonkoli")
+        .trim()
+        .toLowerCase();
+      const resolvedKey = SLUG_MAP[rawKey] || rawKey;
+      const guest = GUEST_LIST[resolvedKey] || GUEST_LIST.sonkoli;
+
+      // Optional quick override for salutation (?s=maam or ?s=sir)
+      const salOverride = (params.get("s") || "").trim().toLowerCase();
+      let salutation = guest.salutation;
+      if (salOverride === "maam" || salOverride === "madam") {
+        salutation = "Respected Ma'am,";
+      } else if (salOverride === "sir") {
+        salutation = "Respected Sir,";
+      }
+
+      document.querySelector("#guest-salutation").textContent = salutation;
+      document.querySelector("#guest-name").textContent = guest.name;
+      document.querySelector("#guest-post").textContent = guest.post;
+
+      const roleParagraph = document.querySelector("#guest-role-paragraph");
+      const closingLine = document.querySelector("#guest-closing");
+
+      if (guest.type === "dignitary") {
+        roleParagraph.innerHTML =
+          `Your esteemed journey, leadership, and accomplishments continue to inspire our community. We would be honoured if you would join us as our <strong id="guest-role"></strong> and share this special occasion with students, faculty, alumni, and guests.`;
+        closingLine.textContent = "We look forward to welcoming you to NERIST.";
+      } else {
+        roleParagraph.innerHTML =
+          `As a valued alumnus of our institution, your journey and accomplishments continue to inspire our community. We would be honoured if you would join us as our <strong id="guest-role"></strong> and share this special occasion with students, faculty, alumni, and guests.`;
+        closingLine.textContent = "We look forward to welcoming you back to NERIST.";
+      }
+
+      document.querySelector("#guest-role").textContent = guest.role;
+      document.querySelector("#guest-date").textContent = guest.date;
+      document.querySelector("#guest-date-label").textContent =
+        guest.date.includes(",") || guest.date.includes("&") ? "Dates" : "Date";
+    }
+
+    applyGuestFromList();
+
+    // =========================================================================
+    // REFINED OCEAN DIVE TRANSITION ANIMATION (MOBILE & LAPTOP)
+    // =========================================================================
     const diveButton = document.querySelector("#dive-button");
     const intro = document.querySelector(".intro");
     const invitation = document.querySelector("#invitation");
@@ -1046,7 +1308,7 @@
         };
       });
 
-      const duration = 4800; // Smooth 4.8-second dive across mobile and laptop
+      const duration = 4800;
       const startTime = performance.now();
       let lastTime = startTime;
 
