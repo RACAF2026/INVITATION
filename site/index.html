@@ -874,7 +874,7 @@
                 </svg>
               </span>
               <span class="detail-label" id="guest-date-label">Date</span>
-              <span class="detail-value" id="guest-date">4 November</span>
+              <span class="detail-value" id="guest-date">5 November</span>
             </div>
             <div>
               <span class="detail-icon" aria-hidden="true">
@@ -926,12 +926,13 @@
 
   <script>
     // =========================================================================
-    // DEFAULT SALUTATION FOR ALL GUESTS
+    // DEFAULT SALUTATION & DATE FOR ALL GUESTS
     // =========================================================================
     const DEFAULT_SALUTATION = "Respected Dignitary,";
+    const DEFAULT_DATE = "5 November";
 
     // =========================================================================
-    // METHOD 1: PRESET GUEST LIST (ALL 33 SPREADSHEET GUESTS + DEFAULT)
+    // METHOD 1: PRESET GUEST LIST (ALL 34 SPREADSHEET GUESTS + DEFAULT)
     // =========================================================================
     const GUEST_LIST = {
       sonkoli: {
@@ -939,246 +940,246 @@
         post: "Executive Engineer, Smart City Itanagar",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "1": {
         name: "Er. Gyati Nako",
         post: "Assistant Engineer, PWD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "2": {
         name: "Er. Likha Taha",
         post: "Junior Engineer, PWD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "3": {
         name: "Er. Pem Yangchin",
         post: "Junior Engineer, PWD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "4": {
         name: "Er. Tajay Marbom",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "5": {
         name: "Er. Rubu Dinsung",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "6": {
         name: "Er. Kendar Ete",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "7": {
         name: "Er. Toko Sith",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "8": {
         name: "Er. Oje Kamra",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "9": {
         name: "Er. Nani Nobin",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "10": {
         name: "Er. Maru Talu",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "11": {
         name: "Er. Subu Konia",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "12": {
         name: "Er. Nending Nomo",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "13": {
         name: "Er. Michi Rimin",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "14": {
         name: "Er. Abindo Tayeng",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "15": {
         name: "Er. Marbom Nguki",
         post: "Junior Engineer, PHE & WS, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "16": {
         name: "Er. Tasso Dogin",
         post: "Junior Engineer, DoHP, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "17": {
         name: "Er. Ipi Gamlin",
         post: "Junior Engineer, DoHP, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "18": {
         name: "Er. Deji Mara",
         post: "Junior Engineer, DoHP, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "19": {
         name: "Er. Gyati Mamung",
         post: "Junior Engineer, DoP, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "20": {
         name: "Er. Kamin Tali",
         post: "Junior Engineer, DoP, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "21": {
         name: "Er. Ogam Peyang",
         post: "Junior Engineer, DoP, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "22": {
         name: "Er. Tamo Taping",
         post: "Junior Engineer, DoP, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "23": {
         name: "Er. Babu Techi Tara",
         post: "Junior Engineer, PWD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "24": {
         name: "Er. Kabom Panyang",
         post: "Assistant Engineer, PHE, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "25": {
         name: "Er. Hano Kojing",
         post: "Junior Engineer, DoHP, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "26": {
         name: "Er. Khoda Naku",
         post: "Assistant Engineer, PHE, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "27": {
         name: "Er. Punam Techi",
         post: "Assistant Engineer, PWD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "28": {
         name: "Er. Liagi Moda",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "29": {
         name: "Er. Higi Tama",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "30": {
         name: "Er. Sanjay Rai",
         post: "Assistant Engineer, PWD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "31": {
         name: "Er. Bomte Gupak",
         post: "Assistant Engineer, PWD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "32": {
         name: "Er. Neelam Abraham Kakum",
         post: "Assistant Engineer, DoP, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "33": {
         name: "Er. Chasam Wangsu",
         post: "Junior Engineer, PHE & WS, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
+        date: "5 November"
       },
       "34": {
         name: "Er. Gombom Pertin",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
         role: "Special Invitee",
         type: "alumnus",
-        date: "4 November"
-    }
+        date: "5 November"
+      }
     };
 
     // Map hyphenated name slugs to the guest numbers
@@ -1255,10 +1256,11 @@
         closingLine.textContent = "We look forward to welcoming you back to NERIST.";
       }
 
+      const eventDate = guest.date || DEFAULT_DATE;
       document.querySelector("#guest-role").textContent = guest.role;
-      document.querySelector("#guest-date").textContent = guest.date;
+      document.querySelector("#guest-date").textContent = eventDate;
       document.querySelector("#guest-date-label").textContent =
-        guest.date.includes(",") || guest.date.includes("&") ? "Dates" : "Date";
+        eventDate.includes(",") || eventDate.includes("&") ? "Dates" : "Date";
     }
 
     applyGuestFromList();
