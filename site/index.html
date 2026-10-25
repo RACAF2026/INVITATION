@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#071d2a">
-  <meta name="description" content="An official invitation to Sonabyss 2026 from the Organising Committee, NERIST.">
+  <meta name="description" content="An official invitation to Sonabyss · RACAF 2026 from the Students’ Union of NERIST (SUN) and the Organising Committee.">
   <meta property="og:title" content="A Message from the RACAF Team | SONABYSS 2026">
-  <meta property="og:description" content="An official invitation to Sonabyss 2026 from the Organising Committee, NERIST.">
+  <meta property="og:description" content="An official invitation to Sonabyss · RACAF 2026 from the Students’ Union of NERIST (SUN) and the Organising Committee.">
   <meta property="og:type" content="website">
   <title>A Message from the RACAF Team | SONABYSS 2026</title>
   <style>
@@ -211,7 +211,7 @@
       position: relative;
       isolation: isolate;
       overflow: hidden;
-      padding: clamp(4rem, 10vw, 8rem) 1.25rem;
+      padding: clamp(3.5rem, 8vw, 7rem) 1.25rem clamp(5rem, 10vw, 8.5rem);
       background: #04121d;
     }
 
@@ -237,12 +237,13 @@
       inset: 0;
     }
 
+    /* --- ADJUSTED PARCHMENT SCROLL CONTAINER FOR 5-PARAGRAPH CONTENT --- */
     .letter {
       position: relative;
       z-index: 1;
-      width: min(100%, 52rem);
+      width: min(100%, 56rem);
       margin: 0 auto;
-      padding: 12.5rem clamp(2.25rem, 9vw, 6.5rem) 3.5rem;
+      padding: clamp(12.5rem, 19vw, 14.5rem) clamp(2.5rem, 9.5vw, 7rem) clamp(5rem, 8vw, 6.25rem);
       overflow: visible;
       background: transparent;
       color: var(--paper-ink);
@@ -252,7 +253,7 @@
     .letter::before {
       position: absolute;
       z-index: 0;
-      inset: 0 0 -4rem;
+      inset: 0 0 -5.5rem;
       background: url("./parchment-sheet.png?v=4") center / 100% 100% no-repeat;
       content: "";
       filter: drop-shadow(0 18px 24px #0008);
@@ -281,29 +282,29 @@
       border-radius: 0;
       background: transparent;
       color: #705b38;
-      font: 700 .68rem/1.5 Arial, sans-serif;
-      letter-spacing: .23em;
+      font: 700 .66rem/1.5 Arial, sans-serif;
+      letter-spacing: .2em;
       text-align: center;
       text-transform: uppercase;
       white-space: nowrap;
     }
 
-    .letter .corner-logos { inset: 9rem 10rem auto; }
-    .letter .corner-logos img { height: 3rem; }
+    .letter .corner-logos { inset: 9.5rem 10.5rem auto; }
+    .letter .corner-logos img { height: 3.1rem; }
 
     .letter h2 {
-      margin: 1rem 0 .45rem;
+      margin: .85rem 0 .45rem;
       color: #254751;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2rem, 5.5vw, 3.5rem);
+      font-size: clamp(1.95rem, 5vw, 3.25rem);
       font-weight: 500;
       letter-spacing: -.04em;
-      line-height: 1.04;
+      line-height: 1.06;
       text-align: center;
     }
 
     .letter-subtitle {
-      margin: 0 0 1.7rem;
+      margin: 0 0 1.5rem;
       color: #78684a;
       font: 700 .7rem/1.6 Arial, sans-serif;
       letter-spacing: .16em;
@@ -315,7 +316,7 @@
       position: relative;
       width: min(100%, 20rem);
       height: 1px;
-      margin: 0 auto 1.5rem;
+      margin: 0 auto 1.35rem;
       background: linear-gradient(90deg, transparent, #b89960 25%, #b89960 75%, transparent);
     }
 
@@ -332,52 +333,52 @@
     }
 
     .letter-body {
-      width: min(100%, 42rem);
-      margin: 1.25rem auto 0;
+      width: min(100%, 45.5rem);
+      margin: 1.15rem auto 0;
       color: #354142;
       font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
-      font-size: clamp(1rem, 1.2vw, 1.1rem);
-      line-height: 1.8;
+      font-size: clamp(.98rem, 1.15vw, 1.06rem);
+      line-height: 1.74;
       text-align: center;
     }
 
     .letter p {
-      margin: 0 0 1.05rem;
+      margin: 0 0 .95rem;
       font-size: inherit;
       line-height: inherit;
     }
 
     .salutation {
-      margin-bottom: 1rem !important;
+      margin-bottom: .85rem !important;
       color: #254751;
-      font-size: 1.08em !important;
+      font-size: 1.06em !important;
       font-weight: 700;
       text-align: left;
     }
 
     .recipient {
-      margin: 0 0 1.3rem !important;
+      margin: 0 0 1.2rem !important;
       padding: .35rem 0 .35rem 1rem;
       border-left: 2px solid #ad8749;
       color: #254751;
       font-family: "Segoe UI", Arial, sans-serif;
       font-size: .98rem !important;
       font-weight: 700;
-      line-height: 1.55 !important;
+      line-height: 1.5 !important;
       text-align: left;
     }
 
     .recipient span {
       display: block;
       color: #6b6d63;
-      font: 400 .9rem/1.6 Arial, sans-serif;
+      font: 400 .9rem/1.55 Arial, sans-serif;
     }
 
     .event-details {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: .8rem;
-      margin: 1.5rem 0;
+      margin: 1.35rem 0;
       padding: 0;
     }
 
@@ -386,7 +387,7 @@
       justify-items: center;
       align-content: start;
       min-width: 0;
-      padding: 1rem .7rem;
+      padding: .95rem .7rem;
       border: 1px solid #a9824d80;
       border-radius: .75rem;
       background: linear-gradient(145deg, #fff9e9d9, #ead6aa8c);
@@ -396,10 +397,10 @@
 
     .detail-icon {
       display: grid;
-      width: 2.45rem;
+      width: 2.35rem;
       aspect-ratio: 1;
       place-items: center;
-      margin-bottom: .65rem;
+      margin-bottom: .55rem;
       border: 1px solid #a9824d80;
       border-radius: 50%;
       background: #f2dfb9;
@@ -407,8 +408,8 @@
     }
 
     .detail-icon svg {
-      width: 1.15rem;
-      height: 1.15rem;
+      width: 1.1rem;
+      height: 1.1rem;
       fill: none;
       stroke: currentColor;
       stroke-linecap: round;
@@ -418,33 +419,33 @@
 
     .detail-label {
       display: block;
-      margin-bottom: .4rem;
+      margin-bottom: .35rem;
       color: #78684a;
-      font: 700 .65rem/1.4 Arial, sans-serif;
+      font: 700 .64rem/1.4 Arial, sans-serif;
       letter-spacing: .12em;
       text-transform: uppercase;
     }
 
     .detail-value {
       color: #173e49;
-      font: 700 .98rem/1.45 Georgia, "Times New Roman", serif;
+      font: 700 .96rem/1.45 Georgia, "Times New Roman", serif;
     }
 
     .signoff {
-      margin-top: 1.4rem !important;
+      margin-top: 1.25rem !important;
       margin-bottom: 0 !important;
     }
 
     .signoff strong {
       display: block;
-      margin-top: .3rem;
+      margin-top: .28rem;
       color: #173e49;
     }
 
     .footer {
       position: relative;
       z-index: 1;
-      margin: 3rem auto 0;
+      margin: 3.5rem auto 0;
       color: #b7cbc8;
       font: .75rem/1.7 Arial, sans-serif;
       letter-spacing: .06em;
@@ -472,7 +473,7 @@
       justify-content: center;
       gap: .75rem;
       width: min(100%, 13rem);
-      margin: 1.5rem auto 0;
+      margin: 1.35rem auto 0;
       color: #a17b42;
       font-size: .78rem;
       letter-spacing: .2em;
@@ -726,52 +727,54 @@
       .dive-button { font-size: .72rem; }
       .invitation {
         padding-top: 0;
-        padding-bottom: 3rem;
+        padding-bottom: 4.5rem;
         background-attachment: scroll;
       }
       .event-details { gap: .55rem; }
-      .event-details > div { padding: .85rem .45rem; }
+      .event-details > div { padding: .8rem .45rem; }
       .letter p.letter-mark {
-        padding: .3rem 0;
-        font-size: .54rem;
-        letter-spacing: .1em;
+        padding: .25rem 0;
+        font-size: .52rem;
+        letter-spacing: .09em;
         white-space: normal;
         max-width: 100%;
       }
 
-      .letter h2 { font-size: clamp(1.65rem, 7vw, 2rem); }
+      .letter h2 { font-size: clamp(1.55rem, 6.8vw, 1.95rem); }
       .letter-body {
-        font-size: .94rem;
-        line-height: 1.65;
+        font-size: .9rem;
+        line-height: 1.6;
+        margin-top: 1.05rem;
       }
-      .recipient { font-size: .9rem !important; }
-      .recipient span { font-size: .82rem; }
+      .letter p {
+        margin-bottom: .82rem;
+      }
+      .recipient { font-size: .88rem !important; margin-bottom: 1rem !important; }
+      .recipient span { font-size: .8rem; }
       .detail-label { font-size: .55rem; letter-spacing: .08em; }
-      .detail-value { font-size: .84rem; }
-      .footer { font-size: .68rem; }
+      .detail-value { font-size: .82rem; }
+      .footer { font-size: .68rem; margin-top: 3.5rem; }
       .intro > .corner-logos { inset: 2rem 2rem auto; }
       .intro > .corner-logos img { height: 2.75rem; max-width: 2.75rem; }
       .letter {
         width: calc(100% + 2.5rem);
         margin-left: -1.25rem;
-        padding: 8rem clamp(1.65rem, 7vw, 2.25rem) 3rem;
+        padding: 9rem clamp(1.8rem, 7.5vw, 2.4rem) 4.25rem;
       }
       .letter::before {
-        background-position: center -3rem;
-        background-size: 112% calc(100% + 3rem);
-      }
-      .letter-body {
-        margin-top: 1.25rem;
+        inset: 0 0 -4.5rem;
+        background-position: center -3.2rem;
+        background-size: 114% calc(100% + 3.5rem);
       }
       .signoff {
-        padding: 0 .5rem .75rem;
+        padding: 0 .4rem .85rem;
         text-align: center;
       }
       .signoff strong:last-child {
-        margin-top: .55rem;
+        margin-top: .45rem;
       }
       .letter .corner-logos {
-        top: 5rem;
+        top: 5.4rem;
         right: auto;
         left: 50%;
         width: max-content;
@@ -794,8 +797,8 @@
       .intro-content { padding: 3.5rem 0 4.5rem; }
       .intro h1 > span:last-child { margin-top: .9rem; }
       .intro-copy { margin: 1.05rem auto 1.2rem; }
-      .letter { padding-top: 7rem; padding-bottom: 2.5rem; }
-      .letter .corner-logos { top: 4rem; }
+      .letter { padding-top: 8.2rem; padding-bottom: 3.8rem; }
+      .letter .corner-logos { top: 4.6rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -841,7 +844,7 @@
           <img src="./nerist-logo.png" alt="NERIST logo">
           <img src="./sonabyss-logo.png" alt="Sonabyss event logo">
         </div>
-        <p class="letter-mark">From the Organising Committee</p>
+        <p class="letter-mark">Students’ Union of NERIST (SUN) · RACAF 2026</p>
         <h2 id="letter-title">A Distinguished Invitation</h2>
         <div class="letter-rule" aria-hidden="true"></div>
 
@@ -850,19 +853,30 @@
           <p class="recipient"><span id="guest-name" style="display:inline;color:inherit;font:inherit;">Er. Sonkoli Sonam</span><span id="guest-post">Executive Engineer, Smart City Itanagar</span></p>
 
           <p>
-            On behalf of the organising committee of NERIST, it is our great pleasure
-            to invite you to Sonabyss 2026, our upcoming event.
-          </p>
-          <p id="guest-role-paragraph">
-            As a valued alumnus of our institution, your journey and accomplishments
-            continue to inspire our community. We would be honoured if you would join
-            us as our <strong id="guest-role">Special Invitee</strong> and share this special occasion
-            with students, faculty, alumni, and guests.
+            On behalf of the Students’ Union of NERIST (SUN) and the Organising Committee
+            of RACAF 2026, it gives us immense pleasure to cordially invite all NERIST
+            alumni who have successfully secured engineering appointments in 2026 to
+            attend RACAF 2026 as <strong id="guest-role">Special Invitees</strong>.
           </p>
           <p>
-            Your presence would add great distinction to the celebration and make it
-            all the more memorable for everyone. We sincerely hope you will be able
-            to accept our invitation.
+            RACAF, the annual cultural festival of NERIST, provides a platform to
+            celebrate talent, excellence, and the spirit of togetherness within our
+            institute. Your professional achievements and successful entry into the
+            engineering profession are a matter of great pride for the entire NERIST
+            fraternity.
+          </p>
+          <p>
+            Through this invitation, we wish to recognise your accomplishments and
+            celebrate your success as distinguished members of our NERIST community.
+            We would be honoured by your presence at the festival and would also be
+            delighted to host a small dinner gathering with invited faculty members at
+            the VIP Guest House on the second day of RACAF, subject to final arrangements.
+          </p>
+          <p>
+            We sincerely hope you will accept our invitation and join us in making
+            RACAF 2026 a memorable occasion. Your presence would inspire our current
+            students and encourage them to pursue their academic and professional
+            aspirations with dedication.
           </p>
 
           <div class="event-details" aria-label="Event details">
@@ -888,8 +902,8 @@
             </div>
           </div>
 
-          <p id="guest-closing">We look forward to welcoming you back to NERIST.</p>
-          <p class="signoff">With warm regards,<strong>Organising Committee</strong><strong>Sonabyss 2026 · NERIST</strong></p>
+          <p id="guest-closing">We look forward to welcoming you back to your alma mater.</p>
+          <p class="signoff">With warm regards,<strong>Students’ Union of NERIST (SUN) &amp; Organising Committee</strong><strong>RACAF · Sonabyss 2026 · NERIST</strong></p>
           <div class="letter-footer-ornament" aria-hidden="true">✧ ✧</div>
         </div>
       </article>
@@ -938,245 +952,245 @@
       sonkoli: {
         name: "Er. Sonkoli Sonam",
         post: "Executive Engineer, Smart City Itanagar",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "1": {
         name: "Er. Gyati Nako",
         post: "Assistant Engineer, PWD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "2": {
         name: "Er. Likha Taha",
         post: "Junior Engineer, PWD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "3": {
         name: "Er. Pem Yangchin",
         post: "Junior Engineer, PWD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "4": {
         name: "Er. Tajay Marbom",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "5": {
         name: "Er. Rubu Dinsung",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "6": {
         name: "Er. Kendar Ete",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "7": {
         name: "Er. Toko Sith",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "8": {
         name: "Er. Oje Kamra",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "9": {
         name: "Er. Nani Nobin",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "10": {
         name: "Er. Maru Talu",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "11": {
         name: "Er. Subu Konia",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "12": {
         name: "Er. Nending Nomo",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "13": {
         name: "Er. Michi Rimin",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "14": {
         name: "Er. Abindo Tayeng",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "15": {
         name: "Er. Marbom Nguki",
         post: "Junior Engineer, PHE & WS, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "16": {
         name: "Er. Tasso Dogin",
         post: "Junior Engineer, DoHP, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "17": {
         name: "Er. Ipi Gamlin",
         post: "Junior Engineer, DoHP, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "18": {
         name: "Er. Deji Mara",
         post: "Junior Engineer, DoHP, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "19": {
         name: "Er. Gyati Mamung",
         post: "Junior Engineer, DoP, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "20": {
         name: "Er. Kamin Tali",
         post: "Junior Engineer, DoP, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "21": {
         name: "Er. Ogam Peyang",
         post: "Junior Engineer, DoP, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "22": {
         name: "Er. Tamo Taping",
         post: "Junior Engineer, DoP, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "23": {
         name: "Er. Babu Techi Tara",
         post: "Junior Engineer, PWD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "24": {
         name: "Er. Kabom Panyang",
         post: "Assistant Engineer, PHE, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "25": {
         name: "Er. Hano Kojing",
         post: "Junior Engineer, DoHP, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "26": {
         name: "Er. Khoda Naku",
         post: "Assistant Engineer, PHE, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "27": {
         name: "Er. Punam Techi",
         post: "Assistant Engineer, PWD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "28": {
         name: "Er. Liagi Moda",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "29": {
         name: "Er. Higi Tama",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "30": {
         name: "Er. Sanjay Rai",
         post: "Assistant Engineer, PWD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "31": {
         name: "Er. Bomte Gupak",
         post: "Assistant Engineer, PWD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "32": {
         name: "Er. Neelam Abraham Kakum",
         post: "Assistant Engineer, DoP, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "33": {
         name: "Er. Chasam Wangsu",
         post: "Junior Engineer, PHE & WS, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       },
       "34": {
         name: "Er. Gombom Pertin",
         post: "Junior Engineer, WRD, Arunachal Pradesh",
-        role: "Special Invitee",
+        role: "Special Invitees",
         type: "alumnus",
         date: "5 November"
       }
@@ -1243,21 +1257,12 @@
       document.querySelector("#guest-name").textContent = guest.name;
       document.querySelector("#guest-post").textContent = guest.post;
 
-      const roleParagraph = document.querySelector("#guest-role-paragraph");
-      const closingLine = document.querySelector("#guest-closing");
-
-      if (guest.type === "dignitary") {
-        roleParagraph.innerHTML =
-          `Your esteemed journey, leadership, and accomplishments continue to inspire our community. We would be honoured if you would join us as our <strong id="guest-role"></strong> and share this special occasion with students, faculty, alumni, and guests.`;
-        closingLine.textContent = "We look forward to welcoming you to NERIST.";
-      } else {
-        roleParagraph.innerHTML =
-          `As a valued alumnus of our institution, your journey and accomplishments continue to inspire our community. We would be honoured if you would join us as our <strong id="guest-role"></strong> and share this special occasion with students, faculty, alumni, and guests.`;
-        closingLine.textContent = "We look forward to welcoming you back to NERIST.";
+      const roleEl = document.querySelector("#guest-role");
+      if (roleEl && guest.role) {
+        roleEl.textContent = guest.role;
       }
 
       const eventDate = guest.date || DEFAULT_DATE;
-      document.querySelector("#guest-role").textContent = guest.role;
       document.querySelector("#guest-date").textContent = eventDate;
       document.querySelector("#guest-date-label").textContent =
         eventDate.includes(",") || eventDate.includes("&") ? "Dates" : "Date";
